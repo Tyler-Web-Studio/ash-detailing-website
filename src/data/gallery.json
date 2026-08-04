@@ -1,0 +1,328 @@
+{
+  "_note": "Captions are deliberately conservative — where the vehicle could not be identified with certainty from the source photo, a neutral description is used rather than a guess. Ash should replace these with the real vehicle and package for each job; that is also what makes the alt text worth something for SEO.",
+  "_imageNote": "The ba/* files are 1536x2048 originals — roughly four times the resolution of the older gallery/* files, which are low-resolution web copies. The build never upscales, so older shots are capped at their source size.",
+  "items": [
+    {
+      "src": "ba/after-1-8.jpg",
+      "caption": "Ford Focus RS — exterior detail",
+      "alt": "Nitrous blue Ford Focus RS after a full exterior detail, paintwork reflecting the sky on a wet street",
+      "tags": [
+        "exterior"
+      ]
+    },
+    {
+      "src": "ba/after-1-6.jpg",
+      "caption": "Focus RS — cabin and dashboard",
+      "alt": "Ford Focus RS dashboard, steering wheel and blue Recaro seats after a premium interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "ba/after-1-4.jpg",
+      "caption": "Focus RS — front cabin",
+      "alt": "Front seats, centre console and gear lever of a Ford Focus RS after an interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "ba/after-1-5.jpg",
+      "caption": "Focus RS — rear seats",
+      "alt": "Blue and black rear seats of a Ford Focus RS deep cleaned and protected",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "ba/after-3.jpg",
+      "caption": "Focus RS — boot",
+      "alt": "Boot of a nitrous blue Ford Focus RS after full extraction and deep cleaning",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "ba/after-1-7-v2.jpg",
+      "caption": "Focus RS — boot carpet",
+      "alt": "Deep cleaned boot carpet of a Ford Focus RS showing restored pile",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "ba/after-4-2.jpg",
+      "caption": "Range Rover — centre console",
+      "alt": "Cream leather seats, wood trim and centre console of a Range Rover after a premium interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "ba/after-1.jpg",
+      "caption": "Land Rover Defender — dashboard",
+      "alt": "Land Rover Defender dashboard and steering wheel after a full interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/gaalery-12.jpg",
+      "caption": "Fabric seat, before and after",
+      "alt": "Split image showing a heavily soiled fabric car seat on the left and the same seat deep-cleaned on the right",
+      "tags": [
+        "interior",
+        "beforeafter"
+      ]
+    },
+    {
+      "src": "gallery/gallery-13.jpg",
+      "caption": "Door sill and cabin, before and after",
+      "alt": "Before and after comparison of a pickup door sill and interior after a full interior detail",
+      "tags": [
+        "interior",
+        "beforeafter"
+      ]
+    },
+    {
+      "src": "gallery/gallery-18.jpg",
+      "caption": "Headlight restoration, before and after",
+      "alt": "Two headlights side by side, one heavily oxidised and yellowed, the other restored and clear",
+      "tags": [
+        "exterior",
+        "beforeafter"
+      ]
+    },
+    {
+      "src": "gallery/gallery-22.jpg",
+      "caption": "Floor mat, deep cleaned",
+      "alt": "A Ford floor mat held up after deep cleaning, showing restored texture and colour",
+      "tags": [
+        "interior",
+        "beforeafter"
+      ]
+    },
+    {
+      "src": "gallery/gallery-15.jpg",
+      "caption": "Pickup cabin, full interior detail",
+      "alt": "Multi-panel view of a pickup truck interior after a full interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-4.jpg",
+      "caption": "Cream leather interior, premium detail",
+      "alt": "Cream leather front seats and dashboard of a luxury SUV after a premium interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-6.jpg",
+      "caption": "Cream leather cabin, premium interior detail",
+      "alt": "Cream and wood interior of a Range Rover after a premium interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-5.jpg",
+      "caption": "Land Rover Defender cabin",
+      "alt": "Land Rover Defender steering wheel and dashboard after an interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-11.jpg",
+      "caption": "Light grey cabin, interior detail",
+      "alt": "Steering wheel, dashboard and light grey seats of an SUV after an interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-19.jpg",
+      "caption": "Black leather interior, premium detail",
+      "alt": "Black leather seats and centre console after a premium interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-21.jpg",
+      "caption": "Cabin detail, front seats and console",
+      "alt": "Front seats, gear selector and dashboard of a car after an interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-1.jpg",
+      "caption": "Boot and rear seats, deep cleaned",
+      "alt": "Rear seats and boot carpet of a large SUV after deep cleaning and extraction",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-3.jpg",
+      "caption": "Land Rover Defender, exterior detail",
+      "alt": "Dark green Land Rover Defender under a carport after an exterior detail",
+      "tags": [
+        "exterior"
+      ]
+    },
+    {
+      "src": "gallery/gallry-9.jpg",
+      "caption": "Defender front end, after wash and protection",
+      "alt": "Front end of a dark Land Rover Defender after an exterior detail",
+      "tags": [
+        "exterior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-10.png",
+      "caption": "Classic Defender, exterior detail",
+      "alt": "Green classic Land Rover Defender parked outside after a full exterior detail",
+      "tags": [
+        "exterior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-2.jpg",
+      "caption": "Range Rover, exterior detail in progress",
+      "alt": "Champagne coloured Range Rover being washed during an exterior detail",
+      "tags": [
+        "exterior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-17.png",
+      "caption": "Snow foam pre-wash",
+      "alt": "Dark SUV covered in snow foam during the pre-wash stage of an exterior detail",
+      "tags": [
+        "exterior",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/gallery-16.png",
+      "caption": "Dark SUV, finished exterior",
+      "alt": "Dark blue SUV photographed at dusk after an exterior detail, paint reflecting the sky",
+      "tags": [
+        "exterior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-23.png",
+      "caption": "Mercedes, gloss after polish",
+      "alt": "Black Mercedes photographed at night after a machine polish, showing deep reflections",
+      "tags": [
+        "exterior",
+        "polish"
+      ]
+    },
+    {
+      "src": "gallery/gallery-20.jpg",
+      "caption": "BMW front end, exterior detail",
+      "alt": "Silver BMW front end and grille after an exterior detail",
+      "tags": [
+        "exterior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-14.jpg",
+      "caption": "Pickup, exterior detail in progress",
+      "alt": "Black pickup truck being washed on a driveway during an exterior detail",
+      "tags": [
+        "exterior",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/gallery-7.jpg",
+      "caption": "Pickup, finished exterior",
+      "alt": "Silver pickup truck with black alloys after a full exterior detail",
+      "tags": [
+        "exterior"
+      ]
+    },
+    {
+      "src": "gallery/gallery-8.jpg",
+      "caption": "Van, exterior detail",
+      "alt": "Dark green van after a full exterior detail on a gravel driveway",
+      "tags": [
+        "exterior"
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "id": "DzTiko73kVc",
+      "title": "21-year-old Ford Fiesta — dog hair interior detail"
+    },
+    {
+      "id": "PhFzFXHx-ac",
+      "title": "Cream interior Mercedes — interior and exterior detail"
+    },
+    {
+      "id": "zFgsdc1Ns5M",
+      "title": "Ford Kuga — dog hair interior and exterior detail"
+    },
+    {
+      "id": "SHAUobq55oQ",
+      "title": "Work van pre-sale reset — interior and exterior detail"
+    },
+    {
+      "id": "9_hATz8znP0",
+      "title": "Mercedes — interior and exterior detail with 2-step polish"
+    },
+    {
+      "id": "pvJrk8wKft0",
+      "title": "BYD — interior and exterior detail"
+    },
+    {
+      "id": "tXpX7cUc7ig",
+      "title": "Maintenance customer BMW"
+    },
+    {
+      "id": "eAkXPsA3efI",
+      "title": "Ford Mondeo — interior and exterior detail with full decontamination"
+    },
+    {
+      "id": "-yFBQUo594o",
+      "title": "Land Rover Discovery — smoke smell and grease removal, interior detail"
+    },
+    {
+      "id": "QgA7JxIEypQ",
+      "title": "BMW — coffee stain and mouldy smoothie removal, interior detail"
+    },
+    {
+      "id": "A5-CKh3DDUs",
+      "title": "Skoda Karoq — swirl mark and scratch removal, exterior detail with 2-step polish"
+    },
+    {
+      "id": "zQ6v8xJ0Hbs",
+      "title": "Hyundai — interior and exterior detail"
+    },
+    {
+      "id": "Vpu1cyKQwF4",
+      "title": "Nissan Juke Sport — interior and exterior detail"
+    },
+    {
+      "id": "D7pNBMIv4zA",
+      "title": "Land Rover Discovery — interior and exterior detail with 1-step polish"
+    },
+    {
+      "id": "nqkbQMoWbvo",
+      "title": "Jeep Cherokee — interior and exterior detail"
+    },
+    {
+      "id": "GVbBVCJaWaY",
+      "title": "Skoda — engine bay detail"
+    }
+  ],
+  "_videoNote": "Titles taken from Ash's captions on the live Recent Work page and paired by document order. Note the videos are still titled '1 March 2026' on YouTube itself — retitling them there with these same names is a free win for YouTube search."
+}

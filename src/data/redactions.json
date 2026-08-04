@@ -1,0 +1,6 @@
+{
+  "_note": "Regions blurred at build time before any derivative is generated. Source files are never modified. Used to obscure customer number plates — a UK VRM is arguably personal data, and a customer's plate has no business being on a supplier's marketing site. Boxes are fractional [x0,y0,x1,y1] of the source image.",
+  "images": {
+    "ba/after-1-8.jpg": [[0.826, 0.602, 0.968, 0.672]]
+  }
+}

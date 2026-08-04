@@ -1,0 +1,249 @@
+[
+  {
+    "slug": "exterior-detail",
+    "name": "Exterior Detail",
+    "short": "Exterior",
+    "priceKey": "exterior-detail",
+    "from": 100,
+    "image": "services/exterior-only-services.jpg",
+    "tagline": "A safe, thorough hand wash that brings the gloss back.",
+    "intro": "A proper exterior clean that lifts dirt, grime and bonded contamination without dragging it across your paint. No brushes, no swirls, no shortcuts.",
+    "forWho": "Regular upkeep, improving shine, and keeping the car looking well presented between bigger details.",
+    "includes": [
+      "Bodywork and tyres soaked in citrus pre-wash and snow foam",
+      "Wheel arches cleaned",
+      "Wheels soaked in non-acidic wheel cleaner",
+      "Exterior pressure rinse",
+      "Wheels treated with fallout remover",
+      "Road tar removed from bodywork and wheels",
+      "Wheel barrels, faces and lug nuts hand-cleaned with soft brushes and wheel woolies",
+      "Bodywork washed with premium shampoo and a plush wash mitt",
+      "Door and boot shuts cleaned",
+      "Bodywork dried with luxury microfibre towels",
+      "Wheels dried, tyres dressed on request",
+      "Hand polish applied",
+      "Ceramic spray wax applied — three months of protection",
+      "Exterior glass cleaned with non-smear cleaner",
+      "Colour restored to exterior plastics"
+    ],
+    "premiumTitle": "What Premium adds",
+    "premium": [
+      "Full multi-stage decontamination — chemical and clay bar — to remove bonded contaminants a wash can't reach",
+      "One-stage machine polishing to reduce light scratches, swirl marks and oxidation",
+      "Deep cleaning of badges, trims, grilles and intricate crevices",
+      "Enhanced wheel and brake-dust removal, including behind the spokes",
+      "Upgraded ceramic sealant or wax for longer-lasting protection",
+      "Exhaust tips polished",
+      "Rubber trims conditioned",
+      "Glass deep-cleaned and treated for better clarity and water beading"
+    ],
+    "premiumFor": "Neglected paintwork, cars going up for sale, or anyone who wants a noticeably deeper gloss and protection that lasts.",
+    "titleName": "Exterior Detail",
+    "metaDescription": "Safe hand wash, decontamination, polish and protection. Mobile exterior car detailing across Canterbury and Kent, from £100. One car a day."
+  },
+  {
+    "slug": "interior-detail",
+    "name": "Interior Detail",
+    "short": "Interior",
+    "priceKey": "interior-detail",
+    "from": 130,
+    "image": "services/our-services-interior.jpg",
+    "tagline": "Deep-cleaned, sanitised and genuinely fresh again.",
+    "intro": "Every surface cleaned, extracted and steamed. This is the service that makes people say the car smells new — because the dirt is actually gone, not covered up.",
+    "forWho": "Family cars, dog owners, anyone who's been living out of their car, and cars being prepared for sale.",
+    "includes": [
+      "Rubbish removed",
+      "Mats removed, vacuumed, dried and brushed",
+      "Dashboard and compartments dust-vacuumed",
+      "Vents cleaned and steamed",
+      "Seats, carpets and boot vacuumed, wet-cleaned, steamed, dried and brushed",
+      "Dashboard, compartments and controls cleaned, towel wiped and intricately detailed",
+      "Interior glass cleaned with non-smear glass cleaner",
+      "Leather care balm applied where needed",
+      "Scented fragrance applied",
+      "Pet hair removal — heavy cases carry a small additional fee"
+    ],
+    "premiumTitle": "What Premium adds",
+    "premium": [
+      "Leather perforations individually cleared",
+      "Every vent meticulously detailed, including internal dust build-up",
+      "Seat creases, stitching lines and panel gaps deep-cleaned",
+      "Fine-pick detailing throughout the cabin",
+      "Enhanced steam and precision work for a near-showroom finish"
+    ],
+    "premiumFor": "Heavily used interiors, cars being prepared for sale, or anyone who wants the highest standard possible.",
+    "titleName": "Interior Detail",
+    "metaDescription": "Deep-cleaned, extracted, steamed and sanitised. Mobile interior car detailing across Canterbury and Kent, from £130. One car a day."
+  },
+  {
+    "slug": "interior-exterior-detail",
+    "name": "Interior + Exterior Detail",
+    "short": "Interior + Exterior",
+    "priceKey": "interior-exterior-detail",
+    "from": 180,
+    "image": "services/interior-and-exterior-services.jpg",
+    "tagline": "The complete job, inside and out. My most booked package.",
+    "intro": "Everything from both details in a single visit. The car goes back to you clean, protected and presentable from every angle — which is why most people choose this one.",
+    "forWho": "Anyone who wants the whole car done properly in one go, and the obvious choice before selling.",
+    "popular": true,
+    "includes": [
+      "The full Interior Detail — extraction, steam, sanitisation and fragrance",
+      "The full Exterior Detail — decontamination wash, polish and protection",
+      "Door and boot shuts cleaned inside and out",
+      "Interior and exterior glass cleaned to a non-smear finish",
+      "Wheels, arches and tyres detailed and dressed"
+    ],
+    "premiumTitle": "What Premium adds",
+    "premium": [
+      "Everything in the Premium Interior — leather perforations, vents, seat creases, fine-pick detailing",
+      "Everything in the Premium Exterior — clay decontamination, machine polish, upgraded protection",
+      "Exterior metal polishing to lift dullness and light defects"
+    ],
+    "premiumFor": "People who want a genuinely premium result rather than a very good clean.",
+    "upsell": "Add a two-step machine polish for £350 total and the paintwork gets corrected as well as cleaned.",
+    "titleName": "Interior + Exterior Detail",
+    "metaDescription": "The whole car, inside and out, in one visit. My most booked package. Mobile detailing across Canterbury and Kent, from £180."
+  },
+  {
+    "slug": "paint-correction",
+    "name": "Machine Polishing & Paint Correction",
+    "short": "Paint correction",
+    "from": 250,
+    "image": "services/premium-exterior-detail-with-2-step-machine-polish.png",
+    "tagline": "Removes 70–80% of the swirls cheap car washes put there.",
+    "intro": "Swirl marks and light scratches are what make dark paint look dull and grey in daylight. A two-step machine polish cuts them out and refines the finish back to a sharp, deep gloss.",
+    "forWho": "Dull, scratched or weathered paintwork — especially black, grey and dark blue cars that have been through automated washes.",
+    "includes": [
+      "Full exterior detail and multi-stage decontamination first",
+      "Paint depth assessed before any correction begins",
+      "Cutting stage to remove swirl marks, light scratches and oxidation",
+      "Refining stage to restore clarity and depth",
+      "70–80% of swirl marks and light scratches removed",
+      "Protection applied to lock the finish in"
+    ],
+    "priceNotes": [
+      {
+        "label": "Premium Exterior + 2-step polish",
+        "price": "£250"
+      },
+      {
+        "label": "Premium Interior + Exterior + 2-step polish",
+        "price": "£350"
+      },
+      {
+        "label": "Premium XL + 2-step polish (vans)",
+        "price": "£300"
+      },
+      {
+        "label": "Exterior metal polishing add-on",
+        "price": "+£20"
+      }
+    ],
+    "note": "Full correction beyond 80% isn't always safe or sensible — it depends on how much clear coat the car has left. I'll tell you honestly what's achievable before starting.",
+    "titleName": "Paint Correction",
+    "metaDescription": "Two-step machine polishing removes 70-80% of swirl marks and light scratches. Mobile paint correction across Kent, from £250."
+  },
+  {
+    "slug": "ceramic-coating",
+    "name": "Ceramic Coating",
+    "short": "Ceramic",
+    "priceKey": "ceramic-coating",
+    "from": 340,
+    "image": "services/ceramic-coatings.png",
+    "tagline": "Years of protection, applied over corrected paint.",
+    "intro": "A ceramic coating is only as good as the paint underneath it — so every coating includes a full exterior detail and a two-step polish first. Seal in swirl marks and you're stuck with them for five years.",
+    "forWho": "New cars, freshly corrected paint, and owners who'd rather wash less and protect more.",
+    "includes": [
+      "Full exterior detail and multi-stage decontamination",
+      "Two-step machine polish to correct the paint first",
+      "Panel wipe to strip all oils and polishing residue",
+      "Ceramic coating applied by hand, panel by panel",
+      "Controlled curing time",
+      "Aftercare guidance so the coating actually lasts its rated life"
+    ],
+    "note": "Exterior only as standard — interior protection packages are available as an upgrade. Call and I'll quote your car properly rather than guessing.",
+    "titleName": "Ceramic Coating",
+    "metaDescription": "Years of protection applied over corrected paint. Every coating includes a full exterior detail and 2-step polish first. Kent, from £340."
+  },
+  {
+    "slug": "ultimate-experience",
+    "name": "The Ultimate Experience",
+    "short": "Ultimate",
+    "from": 600,
+    "image": "services/the-ultimate-experience.jpg",
+    "tagline": "Every surface. Nothing left out.",
+    "intro": "The full transformation, drop-off only. Seats come out, the engine bay gets detailed, the paint gets a multi-stage correction and a five-year coating. This is the one for people who want the absolute best.",
+    "forWho": "Enthusiasts, prestige cars, and anyone who wants their car returned better than the day they bought it.",
+    "includes": [
+      "Premium interior and exterior detail",
+      "Multi-stage machine polish",
+      "Five-year ceramic coating",
+      "Chrome, rubber and vinyl restoration",
+      "Glass shield treatment",
+      "Interior protection applied",
+      "Alloy deep clean",
+      "Engine bay detail",
+      "Air-con decontamination",
+      "Exhaust metal polish",
+      "Seats removed for full access",
+      "Headlight restoration"
+    ],
+    "titleName": "The Ultimate Experience",
+    "metaDescription": "The full transformation, drop-off only. Premium detail, multi-stage polish, 5-year ceramic coating and more. Kent, £600."
+  },
+  {
+    "slug": "maintenance-plan",
+    "name": "Maintenance Plan",
+    "short": "Maintenance",
+    "from": 70,
+    "unit": "/month",
+    "image": "services/maintenance-plan.jpg",
+    "tagline": "Keep it that way, for £70 a month.",
+    "intro": "The hardest part of owning a clean car is keeping it clean. Once your car has had a full detail, I'll come back and keep it there — safely, with the right products, so it never slides back.",
+    "forWho": "Anyone who's had a full detail and wants to protect that investment rather than watch it wear off.",
+    "includes": [
+      "Monthly safe hand wash and decontamination as needed",
+      "Wheels, arches and tyres cleaned and dressed",
+      "Interior vacuum, wipe-down and glass",
+      "Protection topped up so it never fully wears off",
+      "Same detailer every visit — I know your car"
+    ],
+    "note": "Only available after a full interior and exterior detail, so the car starts in the right condition.",
+    "titleName": "Maintenance Plan",
+    "metaDescription": "Keep your car the way I left it. Monthly safe wash, protection topped up, same detailer every visit. Across Kent, £70 a month."
+  },
+  {
+    "slug": "smart-repair",
+    "name": "SMART Repair & Removals",
+    "short": "SMART repair",
+    "from": 100,
+    "image": "services/smart-alloy-repair.png",
+    "tagline": "Scratches, kerbed alloys, badges and old signage.",
+    "intro": "Small, medium and repeatable repairs done properly — without the cost or the week off the road that a body shop involves. I'm honest about what SMART repair can and can't do.",
+    "forWho": "Kerbed wheels, small scratches through the clear coat, de-badging, and removing old business signage before sale.",
+    "items": [
+      {
+        "name": "Exterior SMART scratch / defect repair",
+        "price": "£300 +/–",
+        "body": "For small scratches that have gone through the clear coat to the base coat, metal or primer. Book at least a week ahead — the paint has to be colour-matched and ordered. Where filler is involved it takes two sessions because of curing times. Includes an exterior detail. I am not a body shop and I'll tell you when something needs one."
+      },
+      {
+        "name": "SMART alloy repair",
+        "price": "£100 per alloy",
+        "body": "Sanding, filler and re-spray. This does not cover diamond-cut or powder-coated finishes — a body shop typically charges around £400 a wheel for those. I'd recommend having the wheels rebalanced afterwards, usually £8–£15 a wheel at a garage."
+      },
+      {
+        "name": "Badge removal",
+        "price": "£100",
+        "body": "De-badged and then machine polished so there's no outline, adhesive or ghosting left where the badge used to sit."
+      },
+      {
+        "name": "Vinyl / sticker removal",
+        "price": "£100–£500",
+        "body": "Removing printed signage and vinyl from vehicles. Priced on how much there is to come off. For the best result book it alongside an exterior detail — do that and you get 25% off the detail."
+      }
+    ],
+    "titleName": "SMART Repair",
+    "metaDescription": "Kerbed alloys, small scratches, de-badging and old signage removed. Honest advice on what SMART repair can and can't fix. Kent, from £100."
+  }
+]

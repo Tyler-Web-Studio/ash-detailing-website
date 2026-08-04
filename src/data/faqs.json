@@ -1,0 +1,76 @@
+[
+  {
+    "q": "Why are you more expensive than my local car wash?",
+    "a": "Because a cheap car wash is the single biggest cause of swirl marks and scratches in paintwork. The same brushes and the same dirty mitts go over every car, dragging the last customer's grit across yours.\n\nI use fresh microfibres, regularly replaced brushes and mitts, and quality products on every car regardless of whether it's a Kia Rio or a Bugatti. Your local wash may well be cheaper today. The scratches it leaves behind cost far more to correct later than the difference you saved.",
+    "featured": true,
+    "topic": "pricing"
+  },
+  {
+    "q": "How does booking a day work?",
+    "a": "I only ever take one vehicle a day, so the day is yours — your car isn't sharing my time with anyone else's.\n\nWhen I confirm your booking I'll give you a realistic idea of what to expect so you can plan around it. I'd always rather be straight with you upfront than rush the job to hit a slot.",
+    "featured": true,
+    "topic": "booking"
+  },
+  {
+    "q": "Do you need access to water and electricity?",
+    "a": "Yes. I need a plug point and an outside tap so I can run my extension lead and hose. I carry 30 metres of both, so anywhere within that distance of your house is fine.\n\nIf that's a problem, say so when you enquire — there's usually a way around it and I'd rather sort it out beforehand than turn up and find we're stuck.",
+    "featured": true,
+    "topic": "practical"
+  },
+  {
+    "q": "Are you insured?",
+    "a": "Yes, fully insured. I'm happy to provide the documents as proof if you'd like to see them before booking.",
+    "featured": true,
+    "topic": "trust"
+  },
+  {
+    "q": "How does booking and payment work?",
+    "a": "Send me an enquiry with your vehicle, what you're after and when suits you. I'll come back to you to confirm a date — I only take one car a day, so I'll be straight with you about what's actually available.\n\nOnce the date is agreed, a 20% deposit secures the slot. That covers the reserved day and the premium products bought in for your car. The balance is paid on the day by cash or bank transfer.",
+    "topic": "booking"
+  },
+  {
+    "q": "Do you charge VAT on top?",
+    "a": "No. I'm not VAT registered, so the price you're quoted is the price you pay. Invoices are available on request.",
+    "topic": "pricing"
+  },
+  {
+    "q": "How long have you been detailing?",
+    "a": "I opened the business in late December 2025. Before that I worked alongside a family member in a body shop, and I did that work unpaid — on my own cars and on friends' and family's vehicles — purely because I enjoyed it.\n\nSo the company is young. The hands doing the work are not.",
+    "topic": "trust"
+  },
+  {
+    "q": "Do you do any deals or discounts?",
+    "a": "Three, and they stack with each other:\n\n• **5% off** for blue light and emergency services.\n• **£10 off your next booking** for leaving a review.\n• **Refer a friend** — they get £10 off their detail, you get £10 cashback.",
+    "topic": "pricing"
+  },
+  {
+    "q": "What if my car is in really bad condition?",
+    "a": "That's usually the best kind of job. But heavy soiling uses far more product and effort, so there are honest surcharges: excess dirt £20–£40, pet hair £20–£50, and mould £20–£100.\n\nMould is the one to flag early. Surface mould rarely reflects how deep the problem goes, so it can need a second visit and often an ozone treatment. Send photos with your enquiry and I'll tell you what you're looking at before you commit to anything.",
+    "topic": "practical"
+  },
+  {
+    "q": "Can I see examples of previous work?",
+    "a": "Plenty. The [gallery](/gallery/) has recent transformations, and there's a lot more on TikTok, Instagram, Facebook and YouTube — that's where I post the full before-and-afters.\n\nIf you want to see something specific, like a car the same colour or in similar condition to yours, just ask and I'll dig it out.",
+    "topic": "trust"
+  },
+  {
+    "q": "Do you remove pet hair and smells?",
+    "a": "Yes. Pet hair removal is included in every interior detail, with a surcharge of £20–£50 where there's a lot of it.\n\nSmells are a different problem. Extraction and steam remove the source in most cases, but for stubborn odours — smoke, damp, spoiled milk — an ozone treatment at £50 is what actually solves it. Ozone needs 48 hours of airing afterwards and can leave a faint chlorine-like scent for up to a fortnight.",
+    "topic": "practical"
+  },
+  {
+    "q": "Will a two-step polish remove all my scratches?",
+    "a": "It'll remove roughly 70–80% of swirl marks and light scratches, which is a dramatic change in how the paint looks in daylight.\n\nIt won't remove deep scratches you can catch a fingernail in — those have gone through the clear coat and need SMART repair or a body shop. Chasing 100% correction means cutting away clear coat that doesn't grow back, and I won't do that to someone's car just to say I did.",
+    "topic": "practical"
+  },
+  {
+    "q": "How do I look after the car afterwards?",
+    "a": "Avoid automated car washes and brushes entirely — they undo the work fastest. A two-bucket hand wash with a clean mitt, and drying with a plush microfibre towel rather than letting it air-dry, will keep it looking right for far longer.\n\nIf keeping on top of it isn't realistic, the [maintenance plan](/services/maintenance-plan/) is £70 a month and I take care of it for you.",
+    "topic": "aftercare"
+  },
+  {
+    "q": "Can you come to me?",
+    "a": "Yes — I'm a mobile service and I come to your home or workplace. I cover Canterbury, Whitstable, Sittingbourne, Ashford, Medway, Maidstone, Tonbridge, Tunbridge Wells and out to the London outskirts.\n\nThe Ultimate Experience is the one exception: it's drop-off only, because that level of work needs a controlled space.",
+    "topic": "practical"
+  }
+]

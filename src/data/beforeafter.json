@@ -1,0 +1,111 @@
+{
+  "_note": "Before/after comparison pairs. `crop` is a fractional [x0,y0,x1,y1] box applied to the source BEFORE the pair is fitted to the shared `aspect` — that's how the two halves are made to frame the same thing, since these were shot handheld rather than on a tripod. Black letterboxing is auto-trimmed by the build.",
+  "_verify": "Pairs were matched by visual inspection of the supplied files. Ash should confirm each one is genuinely the same vehicle and job before this goes live — a mislabelled before/after is the one mistake that would really damage trust.",
+  "pairs": [
+    {
+      "slug": "range-rover-driver-side",
+      "title": "Range Rover — driver's side",
+      "service": "interior-detail",
+      "package": "Premium Interior Detail",
+      "note": "Ground-in mats, scuffed sill and dulled leather brought back to showroom condition.",
+      "aspect": 0.8,
+      "featured": true,
+      "before": {
+        "src": "ba/before-4-1.jpg",
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "after": {
+        "src": "ba/after-4-1.jpg",
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "slug": "range-rover-passenger-side",
+      "title": "Range Rover — cabin and console",
+      "service": "interior-detail",
+      "package": "Premium Interior Detail",
+      "note": "Cream leather is unforgiving. Every seam, stitch line and panel gap cleaned by hand.",
+      "aspect": 0.8,
+      "before": {
+        "src": "ba/before-4-3.jpg",
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "after": {
+        "src": "ba/after-4-3.jpg",
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "slug": "range-rover-boot",
+      "title": "Range Rover — boot",
+      "service": "interior-detail",
+      "package": "Interior Detail",
+      "note": "Boots take the worst of it. Full extraction, steam and a brushed finish.",
+      "aspect": 0.8,
+      "before": {
+        "src": "ba/before-3.jpg",
+        "crop": [
+          0.06,
+          0.46,
+          0.94,
+          0.95
+        ]
+      },
+      "after": {
+        "src": "ba/after-4.jpg",
+        "crop": [
+          0,
+          0.08,
+          1,
+          0.92
+        ]
+      }
+    },
+    {
+      "slug": "defender-cabin",
+      "title": "Land Rover Defender — cabin",
+      "service": "interior-detail",
+      "package": "Interior Detail",
+      "note": "A working Defender: mud through the footwell, covers on the seats. Stripped back and reset.",
+      "aspect": 0.8,
+      "before": {
+        "src": "ba/before-1.jpg",
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "after": {
+        "src": "ba/after-1-2.jpg",
+        "crop": [
+          0.06,
+          0.32,
+          0.92,
+          1.0
+        ]
+      }
+    }
+  ]
+}

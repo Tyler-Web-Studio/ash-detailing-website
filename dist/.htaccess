@@ -1,0 +1,17 @@
+# Apache / IONOS
+RewriteEngine On
+
+# force https + non-www -> www to match the canonical
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# old page URLs
+RedirectMatch 301 ^/book-now/?$ /book/
+RedirectMatch 301 ^/contact-us/?$ /contact/
+RedirectMatch 301 ^/faq-s/?$ /faq/
+RedirectMatch 301 ^/our-services-and-prices/?$ /services/
+RedirectMatch 301 ^/recent-work/?$ /gallery/
+RedirectMatch 301 ^/exterior-only-detail/?$ /services/exterior-detail/
+RedirectMatch 301 ^/interior-only-detail/?$ /services/interior-detail/
+RedirectMatch 301 ^/interior-and-exterior-detail/?$ /services/interior-exterior-detail/
+RedirectMatch 301 ^/premium-exterior-detail-with-2-step-machine/?$ /services/paint-correction/

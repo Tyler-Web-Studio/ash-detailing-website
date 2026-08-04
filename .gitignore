@@ -1,0 +1,17 @@
+# --- build artefacts ------------------------------------------------------
+# Zips are regenerated with: python3 build.py --zip
+*.zip
+__pycache__/
+*.pyc
+.venv/
+
+# --- OS / editor ----------------------------------------------------------
+.DS_Store
+.claude/
+
+# --- working reference, not website material ------------------------------
+# ~101 MB of PDFs and screenshots of the OLD IONOS site. Kept locally only.
+screenshots for claude/
+
+# NOTE: dist/ is intentionally NOT ignored. netlify.toml publishes it directly,
+# so Netlify needs no build step and no Python/Pillow on its build image.

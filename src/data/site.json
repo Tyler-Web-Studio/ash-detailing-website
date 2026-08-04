@@ -1,0 +1,121 @@
+{
+  "name": "Ash's Vehicle Valet and Detailing Ltd",
+  "shortName": "Ash's Vehicle Valet & Detailing",
+  "owner": "Ashleigh Loosemore",
+  "tagline": "One car a day.",
+  "subline": "Mobile detailing across Kent. Yours is the only car I touch that day.",
+  "url": "https://www.ashsautodetailingltd.co.uk",
+  "phone": "+447907019798",
+  "phoneDisplay": "07907 019798",
+  "email": "ashs_vvad_ltd@icloud.com",
+  "street": "Pitman Road",
+  "locality": "Canterbury",
+  "region": "Kent",
+  "postcode": "CT3 4FF",
+  "country": "GB",
+  "lat": 51.3117113,
+  "lng": 1.1550329,
+  "priceRange": "££",
+  "foundingDate": "2025-12",
+  "reviewCount": 29,
+  "ratingValue": "5.0",
+  "award": "Best Detailing Service in South England",
+  "hours": [
+    {
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  ],
+  "hoursDisplay": [
+    {
+      "label": "Detailing, every day",
+      "value": "8:00am – 8:00pm"
+    },
+    {
+      "label": "Phone & email",
+      "value": "Any time"
+    }
+  ],
+  "social": {
+    "youtube": "https://www.youtube.com/@ashsvehiclevadltd",
+    "tiktok": "https://www.tiktok.com/@ashs.vehicle.valet",
+    "instagram": "https://www.instagram.com/ashsautodetailing/",
+    "facebook": "https://www.facebook.com/people/Ashs-Vehicle-Valet-and-Detailing/61585480979707/",
+    "google": "https://www.google.com/maps?cid=5785657429822778322"
+  },
+  "nav": [
+    {
+      "label": "Services",
+      "href": "/services/"
+    },
+    {
+      "label": "Pricing",
+      "href": "/pricing/"
+    },
+    {
+      "label": "Gallery",
+      "href": "/gallery/"
+    },
+    {
+      "label": "Reviews",
+      "href": "/reviews/"
+    },
+    {
+      "label": "Areas",
+      "href": "/areas/"
+    },
+    {
+      "label": "About",
+      "href": "/about/"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact/"
+    }
+  ],
+  "trustPoints": [
+    {
+      "value": "5.0",
+      "label": "from 29 reviews",
+      "icon": "star"
+    },
+    {
+      "value": "Award",
+      "label": "Best in South England",
+      "icon": "award"
+    },
+    {
+      "value": "Insured",
+      "label": "Fully covered",
+      "icon": "shield"
+    },
+    {
+      "value": "Mobile",
+      "label": "I come to you",
+      "icon": "van"
+    }
+  ],
+  "deposit": "20%",
+  "heroImage": "home/hero-snowfoam.png",
+  "logo": "home/ash-logo.jpg",
+  "formEndpoint": "https://formsubmit.co/ashs_vvad_ltd@icloud.com",
+  "hoursNote": "Ash answers the phone and email any time, day or night — detailing itself runs 8am to 8pm.",
+  "_notes": {
+    "formEndpoint": "Form relay for a static site. FormSubmit needs a one-time activation email before it works. Swap for Formspree, Web3Forms, Netlify Forms or a real backend by changing that one value.",
+    "hours": "Confirmed with Ash 31 July 2026: work hours 08:00-20:00 daily; phone and email answered 24/7."
+  },
+  "heroAlt": "Black Range Rover covered in snow foam on a wet driveway during the pre-wash stage of an exterior detail",
+  "heroImageAlt2": "home/top-background-image.jpg",
+  "googleProfile": "https://www.google.com/maps?cid=5785657429822778322",
+  "googleReviews": "https://www.google.com/maps?cid=5785657429822778322",
+  "_heroNote": "This hero is a generated atmosphere shot, not one of Ash's jobs. Every image in the gallery and the before/after sliders is her real work — keep it that way, and swap this for a photograph of her own as soon as there is a good landscape one."
+}

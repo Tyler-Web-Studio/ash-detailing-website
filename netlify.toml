@@ -1,0 +1,39 @@
+# Netlify config for Ash's Vehicle Valet & Detailing
+#
+# `dist/` is committed to the repo, so Netlify has nothing to build — it just
+# publishes the folder. Push to GitHub, connect the repo, done.
+#
+# If you'd rather Netlify ran the build itself, swap the command below for:
+#     command = "pip install pillow && python3 build.py"
+# It works, but it makes every deploy depend on pip resolving Pillow. Publishing
+# the prebuilt folder is faster and can't fail.
+
+[build]
+  publish = "dist"
+  command = "echo 'Publishing prebuilt dist/'"
+
+# Long cache on fingerprint-free but immutable image derivatives.
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+# The 301s from the old IONOS URLs live in dist/_redirects, which Netlify picks
+# up automatically. Don't duplicate them here — _redirects wins either way.

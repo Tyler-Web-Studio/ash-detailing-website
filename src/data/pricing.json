@@ -1,0 +1,253 @@
+{
+  "_note": "SINGLE SOURCE OF TRUTH FOR ALL PRICES. Confirmed with Ash 31 July 2026. Edit here and rebuild — nothing is hard-coded in templates.",
+  "currency": "GBP",
+  "symbol": "£",
+  "vatRegistered": false,
+  "packages": {
+    "exterior-detail": {
+      "name": "Exterior Detail",
+      "base": 100,
+      "variants": [
+        {
+          "label": "Basic",
+          "add": 0,
+          "total": 100
+        },
+        {
+          "label": "Premium",
+          "add": 40,
+          "total": 140,
+          "popular": true
+        },
+        {
+          "label": "Large Van (basic)",
+          "add": 20,
+          "total": 120
+        },
+        {
+          "label": "Caravan (basic)",
+          "add": 50,
+          "total": 150
+        },
+        {
+          "label": "Premium Large Van",
+          "add": 40,
+          "total": 140,
+          "note": "Confirmed by Ash — same price as a standard car Premium."
+        },
+        {
+          "label": "Premium Caravan",
+          "add": 70,
+          "total": 170
+        },
+        {
+          "label": "Premium + 2-step machine polish",
+          "add": 150,
+          "total": 250
+        },
+        {
+          "label": "Premium XL + 2-step polish (vans)",
+          "add": 200,
+          "total": 300
+        },
+        {
+          "label": "Caravans (full)",
+          "add": 350,
+          "total": 450
+        }
+      ]
+    },
+    "interior-detail": {
+      "name": "Interior Detail",
+      "base": 130,
+      "variants": [
+        {
+          "label": "Basic",
+          "add": 0,
+          "total": 130
+        },
+        {
+          "label": "Premium",
+          "add": 20,
+          "total": 150,
+          "popular": true
+        },
+        {
+          "label": "Large Vehicle Basic",
+          "add": 30,
+          "total": 160
+        },
+        {
+          "label": "Large Vehicle Premium",
+          "add": 50,
+          "total": 180
+        }
+      ]
+    },
+    "interior-exterior-detail": {
+      "name": "Interior + Exterior Detail",
+      "base": 180,
+      "variants": [
+        {
+          "label": "Basic",
+          "add": 0,
+          "total": 180
+        },
+        {
+          "label": "Premium",
+          "add": 60,
+          "total": 240,
+          "popular": true
+        },
+        {
+          "label": "XL Vehicle (6+ seats) Basic",
+          "add": 40,
+          "total": 220
+        },
+        {
+          "label": "XL Vehicle (6+ seats) Premium",
+          "add": 80,
+          "total": 260
+        },
+        {
+          "label": "Premium + 2-step machine polish",
+          "add": 170,
+          "total": 350
+        }
+      ]
+    },
+    "ceramic-coating": {
+      "name": "Ceramic Coating",
+      "base": 300,
+      "note": "Exterior only. Includes a full exterior detail and 2-step polish before the coating goes on.",
+      "variants": [
+        {
+          "label": "1 year",
+          "add": 40,
+          "total": 340
+        },
+        {
+          "label": "2 year",
+          "add": 50,
+          "total": 350
+        },
+        {
+          "label": "5 year",
+          "add": 150,
+          "total": 450,
+          "popular": true
+        },
+        {
+          "label": "1 year + Interior Premium",
+          "add": 100,
+          "total": 400
+        },
+        {
+          "label": "2 year + Interior Premium",
+          "add": 120,
+          "total": 420
+        },
+        {
+          "label": "5 year + Interior Premium",
+          "add": 220,
+          "total": 520
+        }
+      ]
+    }
+  },
+  "flagship": [
+    {
+      "slug": "ultimate-experience",
+      "name": "The Ultimate Experience",
+      "price": 600,
+      "unit": "",
+      "note": "Drop-off only. The full transformation, nothing left out."
+    },
+    {
+      "slug": "maintenance-plan",
+      "name": "Maintenance Plan",
+      "price": 70,
+      "unit": "/month",
+      "note": "Available after a full interior/exterior detail."
+    }
+  ],
+  "specialist": [
+    {
+      "name": "SMART scratch / defect repair",
+      "price": "£300",
+      "qualifier": "+/– quoted",
+      "note": "Booked in advance so the paint can be colour-matched and ordered. Includes an exterior detail."
+    },
+    {
+      "name": "SMART alloy repair",
+      "price": "£100",
+      "qualifier": "per alloy",
+      "note": "Sanding, filler, re-spray. Not diamond-cut or powder coating."
+    },
+    {
+      "name": "Vinyl / sticker removal",
+      "price": "£100–£500",
+      "qualifier": "quoted",
+      "note": "Priced on quantity. 25% off the detail when booked together."
+    },
+    {
+      "name": "Badge removal",
+      "price": "£100",
+      "qualifier": "",
+      "note": "De-badged, then machine polished so no residue is left behind."
+    }
+  ],
+  "addons": [
+    {
+      "name": "Headlight restoration",
+      "price": 50,
+      "note": "+£10 per mile if booked on its own"
+    },
+    {
+      "name": "Ozone treatment",
+      "price": 50,
+      "note": "Interior packages only. 48 hours airing afterwards."
+    },
+    {
+      "name": "Engine bay detail",
+      "price": 30,
+      "note": ""
+    },
+    {
+      "name": "Exterior metal polishing",
+      "price": 20,
+      "note": "On the £350 package"
+    }
+  ],
+  "surcharges": [
+    {
+      "name": "Excess dirt",
+      "range": "£20 – £40"
+    },
+    {
+      "name": "Mould",
+      "range": "£20 – £100"
+    },
+    {
+      "name": "Pet hair",
+      "range": "£20 – £50"
+    }
+  ],
+  "discounts": [
+    {
+      "name": "Blue light & emergency services",
+      "value": "5% off",
+      "detail": "NHS, police, fire, ambulance and armed forces."
+    },
+    {
+      "name": "Leave a review",
+      "value": "£10 off",
+      "detail": "Off your next booking, as a thank you."
+    },
+    {
+      "name": "Refer a friend",
+      "value": "£10 + £10",
+      "detail": "They get £10 off their detail, you get £10 cashback."
+    }
+  ]
+}

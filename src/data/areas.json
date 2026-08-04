@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "canterbury",
+    "name": "Canterbury",
+    "distance": "Local — 6 miles",
+    "postcodes": "CT1 · CT2 · CT3 · CT4",
+    "lead": "I'm based in Hersden, just outside Canterbury, so this is home turf. Six miles from the city centre and no travel charge anywhere in the CT postcodes.",
+    "body": "Canterbury cars take a beating from a very specific combination — narrow park-and-ride commutes, tree sap in the summer along the Whitstable Road, and salt spray blowing in off the coast in winter. Tree sap in particular bonds hard to paint and won't come off in a normal wash, which is why the decontamination stage in every exterior detail matters here more than most places.\n\nMost Canterbury bookings are the Interior + Exterior Detail, and because I'm so close I can usually fit local jobs in at shorter notice than anywhere else I cover.",
+    "popular": ["interior-exterior-detail", "interior-detail", "ceramic-coating"],
+    "note": "Closest area I cover. Same-week slots are more likely here than anywhere else."
+  },
+  {
+    "slug": "whitstable",
+    "name": "Whitstable",
+    "distance": "7 miles",
+    "postcodes": "CT5",
+    "lead": "Fifteen minutes up the road. Whitstable is one of the easiest places I work — and one of the hardest environments for a car.",
+    "body": "Salt air is relentless on paintwork and alloys. Cars parked within sight of the sea pick up salt film constantly, and it eats into lacquer and wheel finishes far faster than most owners realise. If you park near the harbour or along the coast road, protection isn't a luxury here — it's the thing that stops your paint dulling within a couple of years.\n\nThat's why ceramic coatings and the Premium Exterior Detail come up more often in Whitstable than anywhere else I cover. A coating gives you a sacrificial layer that takes the salt instead of your clear coat.",
+    "popular": ["ceramic-coating", "exterior-detail", "interior-exterior-detail"],
+    "note": "Salt exposure is the main issue here. Worth asking about protection rather than just cleaning."
+  },
+  {
+    "slug": "sittingbourne",
+    "name": "Sittingbourne",
+    "distance": "17 miles",
+    "postcodes": "ME9 · ME10",
+    "lead": "Straight along the A299 and M2 — an easy run, and a regular part of my week.",
+    "body": "Sittingbourne is a commuter town, and commuter cars have a particular problem: motorway film. Weeks of M2 and M20 driving lay down a bonded layer of road grime, diesel residue and iron fallout that a wash simply glides over. It's what makes a 'clean' car still look flat.\n\nThe clay bar and fallout removal stages in the Premium Exterior Detail are what actually fix that. If your car looks dull even straight after washing, this is almost always why.",
+    "popular": ["exterior-detail", "interior-exterior-detail", "paint-correction"],
+    "note": "Motorway commuters — ask about the multi-stage decontamination."
+  },
+  {
+    "slug": "ashford",
+    "name": "Ashford",
+    "distance": "20 miles",
+    "postcodes": "TN23 · TN24 · TN25",
+    "lead": "Around forty minutes down the A28. I cover Ashford and the surrounding villages regularly.",
+    "body": "Ashford has a lot of newer cars on finance and lease agreements, and that changes what matters. If you're handing a car back, the difference between a clean car and a properly detailed one is the difference between a clean bill and a damage charge for scuffs, stained seats or kerbed alloys.\n\nA Premium Interior Detail plus SMART alloy repair before an end-of-lease inspection routinely costs less than the charges it prevents. Worth booking a few weeks before the handover date rather than the week of.",
+    "popular": ["interior-detail", "smart-repair", "interior-exterior-detail"],
+    "note": "End-of-lease handbacks — book a few weeks ahead of your inspection."
+  },
+  {
+    "slug": "medway",
+    "name": "Medway",
+    "distance": "25 miles",
+    "postcodes": "ME1 – ME8 · Chatham, Gillingham, Rochester, Strood",
+    "lead": "Covering Chatham, Gillingham, Rochester and Strood — around forty-five minutes from base.",
+    "body": "Medway is dense, and dense means tight parking. Most of the cars I detail across the Towns come to me with door-edge chips, kerbed alloys and the fine scratching that comes from squeezing past things in narrow residential streets.\n\nSMART alloy repair and paint correction are the two services that come up most here. A two-step machine polish takes out the light scratching that makes dark paint look grey, and kerbed wheels are usually a straightforward fix at £100 an alloy.",
+    "popular": ["paint-correction", "smart-repair", "interior-exterior-detail"],
+    "note": "Tight-parking damage — alloys and light scratching are the usual jobs."
+  },
+  {
+    "slug": "maidstone",
+    "name": "Maidstone",
+    "distance": "28 miles",
+    "postcodes": "ME14 – ME17",
+    "lead": "Kent's county town, about fifty minutes from base. A regular fixture in my diary.",
+    "body": "Maidstone brings me the widest mix of anywhere I cover — family SUVs that have carried children and dogs for years, and prestige cars that have never seen anything harsher than a snow foam. The two need completely different things.\n\nFor the family cars it's almost always the Premium Interior Detail with an ozone treatment: extraction, steam and sanitisation that actually removes what's causing the smell rather than perfuming over it. For the prestige cars it's ceramic coating over corrected paint.",
+    "popular": ["interior-detail", "interior-exterior-detail", "ceramic-coating"],
+    "note": "Family cars with pets — ask about ozone treatment alongside the interior."
+  },
+  {
+    "slug": "tonbridge",
+    "name": "Tonbridge",
+    "distance": "45 miles",
+    "postcodes": "TN9 · TN10 · TN11",
+    "lead": "West Kent, about an hour and a quarter away. I travel here for full-day bookings.",
+    "body": "Tonbridge is a distance from base, so it makes sense to do it properly in one visit rather than a quick tidy-up. Larger packages — Interior + Exterior, paint correction, or a ceramic coating — are what I'd normally travel this far for.\n\nBecause it's a longer run, book with a bit more notice than you would for Canterbury. Once the date's confirmed, the day is yours: one car, no rushing to a second job.",
+    "popular": ["interior-exterior-detail", "paint-correction", "ceramic-coating"],
+    "note": "Longer travel — best suited to full-day packages. Book with extra notice."
+  },
+  {
+    "slug": "tunbridge-wells",
+    "name": "Tunbridge Wells",
+    "distance": "48 miles",
+    "postcodes": "TN1 – TN4",
+    "lead": "The far west of my patch, around an hour and a half from base. Worth the drive for the right job.",
+    "body": "Tunbridge Wells has a high concentration of prestige and performance cars, and those owners generally already know what they want: correction and coating, not a wash.\n\nThe work I do here is usually a two-step machine polish followed by a multi-year ceramic coating, or the two-day Ultimate Experience. If you're the sort of owner who notices swirl marks under a streetlight, this is the end of the range you're looking at.",
+    "popular": ["ceramic-coating", "paint-correction", "ultimate-experience"],
+    "note": "Mostly correction and coating work. Book well ahead."
+  },
+  {
+    "slug": "london-outskirts",
+    "name": "London Outskirts",
+    "distance": "50–60 miles",
+    "postcodes": "Dartford · Bexley · Bromley · Orpington · Sevenoaks",
+    "lead": "I travel to the edges of south-east London for larger bookings — Dartford, Bexley, Bromley, Orpington and Sevenoaks.",
+    "body": "City driving is the harshest environment a car's paint can live in. Brake dust bakes onto alloys, iron fallout embeds in the clear coat, and stop-start traffic means the front end takes constant stone chipping and road film.\n\nCars that come to me from London almost always need the full multi-stage decontamination before anything else can be judged. Until the bonded contamination is off, you genuinely can't see what condition the paint is in underneath.",
+    "popular": ["interior-exterior-detail", "paint-correction", "ceramic-coating"],
+    "note": "Outer London only, and for full-day bookings. Message me with your postcode and I'll confirm before you commit."
+  }
+]

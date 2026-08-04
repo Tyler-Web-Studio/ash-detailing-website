@@ -1,0 +1,182 @@
+{
+  "_note": "Real Google reviews, transcribed from Ash's public Google Business Profile. Names are reduced to first name + surname initial as a data-minimisation measure — the reviewers published under full names, but there is no need for this site to repeat them. Do NOT invent reviews: the AggregateRating schema is only legitimate if every entry is genuine.",
+  "_excerpting": "Some Google reviews were truncated behind a 'More' link, so those are quoted as excerpts up to a natural sentence break. No wording has been altered. Two were trimmed further on purpose: one reviewer disclosed a health condition and another identified a wheelchair-accessible vehicle — special-category personal data that has no business being republished on a supplier's site. The praise is quoted; the sensitive detail is not.",
+  "_notIncluded": "One of the 29 (Christian R.) left a star rating with no written text, so there is nothing to quote.",
+  "aggregate": {
+    "rating": "5.0",
+    "count": 29,
+    "source": "Google"
+  },
+  "items": [
+    {
+      "name": "Jenny S.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Super professional and friendly. Ash did the most impressive job on our vehicle. It looks brand new! Thoughtful and, frankly, inspired extra touches set her apart from the crowd. We've asked her to come back to transform our other car."
+    },
+    {
+      "name": "Helen G.",
+      "rating": 5,
+      "source": "Google",
+      "text": "I can't recommend Ash and her company highly enough. Precision and perfectionism second to none. It's so refreshing to see someone with so much pride in her work and so talented. I've already recommended Ash to friends and will be using her again. Thank you so much."
+    },
+    {
+      "name": "Kenneth W.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ashley came to do my Focus RS and did a brilliant job, would recommend her to anyone."
+    },
+    {
+      "name": "Chloe B.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Wow, what can I say? 5 star service! Great communication, easy to book in. Ash did an amazing job on my car! It was muddy, sandy, covered in dog hair. Now looks brand new. Highly recommend and will be booking again. Thankyou."
+    },
+    {
+      "name": "Jan M.",
+      "rating": 5,
+      "source": "Google",
+      "text": "I am absolutely delighted with the results on my car. I have 2 dogs and the interior was very dirty beforehand. Ash tirelessly worked to remove the fur and mud throughout."
+    },
+    {
+      "name": "Suzie B.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ash done a full detail and 1 step polish on my van and done an amazing job. The car looks better than when I got it! Absolutely amazing results, couldn't be happier. Would recommend to anyone!"
+    },
+    {
+      "name": "GR H.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Absolutely outstanding! Gave Ash a tight time slot to clean my truck and it genuinely came back better than new. She obviously knows what she's doing."
+    },
+    {
+      "name": "Mark D.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Cannot say enough just how pleased I am with Ash's work. My car is 14 years old and it now looks brand new. Absolutely exceptional service — she will definitely be coming back in the future. Thank you Ash."
+    },
+    {
+      "name": "Jack C.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Really delayed review so I do apologise! Couldn't recommend this company highly enough. Ash is super friendly, really easy to communicate with. She clearly knows her stuff. You will not be disappointed. Just booked in for another detail!"
+    },
+    {
+      "name": "Kiana A.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Just had my Ford Fiesta cleaned by Ash and I'm really impressed! Ash did a brilliant job — the car looks and smells amazing, inside and out. Super friendly, easy to deal with, and clearly takes pride in what she does."
+    },
+    {
+      "name": "Jannine & Hannah",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ash was excellent at the initial communications and punctual on the day. The quality of her work and attention to detail was second to none. Would highly recommend and will definitely use again in the future. Thank you."
+    },
+    {
+      "name": "Paul S.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Detailed my wife's car today and done a fantastic job with good attention to detail, and took her time to make sure everything was done right. She was very knowledgable about paint and detailing."
+    },
+    {
+      "name": "Alper A.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ash cleaned my BYD today and did a fantastic job. She was incredibly thorough and made my car look like new again. I couldn't be happier with the result and would highly recommend Ash to anyone looking for exceptional service."
+    },
+    {
+      "name": "Danielle G.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ash done an amazing job at cleaning my car!! Great service and really friendly! Will definitely be going back. Cheers."
+    },
+    {
+      "name": "Caroline R.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ash's services are absolutely second to none. She did an absolutely amazing job on my car — you would think it was brand new!"
+    },
+    {
+      "name": "David M.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Have spent some time in Kent recently and needed to get my car cleaned. Ash did an amazing job! Would highly recommend — from inside to out, I could not recommend more highly."
+    },
+    {
+      "name": "Kayley B.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ash's attention to detail is second to none! She's a perfectionist and we were very happy with the results! Thank you Ash, our car is smelling and looking fresh again."
+    },
+    {
+      "name": "Gary C.",
+      "rating": 5,
+      "source": "Google",
+      "text": "We were delighted with the result. Both inside and out were given a thorough and detailed clean. Everything was done to a really high standard."
+    },
+    {
+      "name": "Michelle V.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ash has done an incredible job valeting the car, especially working in such hot temperatures. She was really lovely and the attention to detail was great."
+    },
+    {
+      "name": "Alice D.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ash done an amazing job, her attention to detail is incredible. My car has never looked better!"
+    },
+    {
+      "name": "Matthew P.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Had my car cleaned today by Ash — what a fantastic job. Would highly recommend, will be using on a monthly basis going forward."
+    },
+    {
+      "name": "Stu",
+      "rating": 5,
+      "source": "Google",
+      "text": "Fantastic — highly recommended. Looks new, even at 6 years old!"
+    },
+    {
+      "name": "J H.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Super friendly, professional, and easy to deal with from start to finish. Went above and beyond what I expected."
+    },
+    {
+      "name": "Thomas P.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Amazing eye for detail and great customer service — friendly, and I will definitely return again regularly. Highly recommended."
+    },
+    {
+      "name": "Tom O.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Amazing job. Really easy to book and communicate with throughout. Absolutely stress free experience! Great value, brilliant result."
+    },
+    {
+      "name": "David H.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Amazing clean, good value for money! Ash is very friendly."
+    },
+    {
+      "name": "Rikki H.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Great, friendly service, cars like new again, highly recommended."
+    },
+    {
+      "name": "Alex L.",
+      "rating": 5,
+      "source": "Google",
+      "text": "Ash done my car this morning. Very impressed. Thankyou."
+    }
+  ],
+  "_howToAddMore": "Paste additional REAL reviews into `items` as {name, rating, source, text}. The reviews page shows the first 6 and reveals the rest behind a button, so adding many costs nothing in load time.",
+  "_whyNotAutomatic": "Google cannot be auto-synced on a static site: the official Places API returns a maximum of 5 reviews, needs an API key with billing, and needs a server. Third-party widgets can show more but inject heavy third-party JavaScript, which would undo the speed work."
+}

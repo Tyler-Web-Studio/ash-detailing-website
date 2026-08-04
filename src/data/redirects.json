@@ -1,0 +1,14 @@
+{
+  "_note": "301 map from the old IONOS site's URLs (taken from its live wp-sitemap) to the new structure. Without these, every existing search ranking and inbound link lands on a 404 and the equity is lost. Emitted by build.py as both dist/_redirects (Netlify / Cloudflare Pages) and dist/.htaccess (Apache / IONOS).",
+  "map": {
+    "/book-now/": "/book/",
+    "/contact-us/": "/contact/",
+    "/faq-s/": "/faq/",
+    "/our-services-and-prices/": "/services/",
+    "/recent-work/": "/gallery/",
+    "/exterior-only-detail/": "/services/exterior-detail/",
+    "/interior-only-detail/": "/services/interior-detail/",
+    "/interior-and-exterior-detail/": "/services/interior-exterior-detail/",
+    "/premium-exterior-detail-with-2-step-machine/": "/services/paint-correction/"
+  }
+}
