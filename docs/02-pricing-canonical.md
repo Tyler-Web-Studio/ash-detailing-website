@@ -13,11 +13,11 @@ Ash's old site carries **two** price lists, and as of 6 August 2026 they disagre
 | Source | Status |
 |---|---|
 | **The booking flow** (`/book-now/` Ecwid store) | ✅ **CANONICAL.** This is where customers receive their actual quoted price. Verified option-by-option on 6 Aug 2026; matches `pricing.json` exactly. |
-| The marketing page (`/our-services-and-prices/`) | ❌ **Do not use.** Hand-edited 6 Aug 2026 and now inconsistent with the booking flow — it shows Premium Exterior £120 vs £140, Premium Interior £180 vs £150, Ceramic "£400+" vs £340, and Ultimate £800 vs £600. |
+| The marketing page (`/our-services-and-prices/`) | ❌ **Do not use.** Hand-edited 6 Aug 2026 and now inconsistent with the booking flow — it shows Premium Exterior £120 vs £140, Premium Interior £180 vs £150, Premium Int+Ext £250 vs £240, Premium Ext + 2-step £300 vs £250, Premium Int+Ext + 2-step £450 vs £350, and Ceramic "£400+" vs £340. **Ash still needs to correct this page** — customers read it today. Its only correct-and-unique figure was the Ultimate at £800, which she has since confirmed. |
 
 **Rule: the booking flow is the source of truth, because that is the number the customer is actually charged.** If the two ever disagree again, take the booking flow and get the marketing page corrected — never the reverse.
 
-> ⏳ **Open — needs Ash.** *The Ultimate Experience* has **no booking-flow entry**, so there is no canonical number for it. Our site says **£600**; her marketing page was changed to **£800** on 6 Aug 2026. Left at £600 pending her confirmation. This is the only unresolved price on the site.
+> ✅ **Resolved 6 August 2026.** *The Ultimate Experience* has **no booking-flow entry**, so it was the one price the store could not settle. Confirmed by Ash via Tyler as **£800** (up from £600). Applied to `pricing.json` and `services.json`. There are now no unresolved prices on the site.
 
 ---
 
@@ -77,7 +77,7 @@ Exterior only. Includes full exterior detail + 2-step polish + coating.
 
 | Service | Price | Notes |
 |---|---|---|
-| **The Ultimate Experience** ⏳ | **£600** | ⏳ *Not in the booking flow — her marketing page now says £800. Awaiting Ash's confirmation; see the note at the top.* Drop-off only, 2-day full transformation. Premium interior & exterior detail, 2–3 step polish, 5-year ceramic coating, chrome/rubber/vinyl restoration, glass shield, interior protection, alloy deep clean, engine bay detail, air-con decontamination, exhaust metal polish, seat removal, headlight restoration. |
+| **The Ultimate Experience** | **£800** | *Confirmed by Ash 6 Aug 2026, up from £600. Not in the booking flow — this is the one price the store does not carry.* Drop-off only, 2-day full transformation. Premium interior & exterior detail, 2–3 step polish, 5-year ceramic coating, chrome/rubber/vinyl restoration, glass shield, interior protection, alloy deep clean, engine bay detail, air-con decontamination, exhaust metal polish, seat removal, headlight restoration. |
 | **Maintenance plan** | **£70 / month** | Only available after a full interior/exterior detail, so the vehicle starts in the right condition. |
 
 ## 6. Specialist work (quoted)
