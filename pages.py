@@ -125,7 +125,7 @@ def home():
     ba = "".join(f'<div class="rv">{before_after(x)}</div>' for x in BEFOREAFTER["pairs"][:2])
 
     steps = [
-        ("Decontaminate", "Citrus pre-wash, snow foam, fallout remover and clay bar. Nothing gets touched until the grit is off &mdash; that's what causes swirl marks."),
+        ("Decontaminate", "Citrus pre-wash, snow foam and a full chemical decontamination &mdash; iron fallout and tar dissolved off the paint rather than rubbed off it. Nothing gets touched until the grit is gone &mdash; that's what causes swirl marks."),
         ("Wash safely", "Two buckets, fresh microfibre mitts, non-acidic wheel cleaner. Every panel by hand."),
         ("Correct", "Machine polish where the paint needs it. 70&ndash;80% of swirls and light scratches, cut out properly."),
         ("Deep clean inside", "Extraction, steam and sanitisation. Vents, seams, stitch lines, panel gaps &mdash; fine-pick detailing throughout."),
@@ -613,9 +613,9 @@ def book_page():
 
 <section class="sec">
   <div class="wrap split" style="align-items:start">
-    <form class="form" id="bookform" method="post" action="{SITE['formEndpoint']}">
-      <input type="hidden" name="_subject" value="New booking enquiry — website">
-      <input type="hidden" name="_template" value="table">
+    <form class="form" id="bookform" method="post" action="{SITE['form']['successPath']}"
+          name="{SITE['form']['name']}" data-netlify="true" data-netlify-honeypot="_honey">
+      <input type="hidden" name="form-name" value="{SITE['form']['name']}">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <fieldset class="fieldset">
@@ -684,8 +684,12 @@ def book_page():
           <div class="field" id="optionfield">
             <label for="option">Option <span class="req">*</span>
               <span class="hint">Premium is the most booked</span></label>
-            <select id="option" name="option" required>
-              <option value="">Choose a service first&hellip;</option>
+            <!-- Deliberately NOT required in the markup: the list is populated by main.js.
+                 With JS blocked this select only ever holds the empty placeholder, so a
+                 required attribute here would make the form permanently unsubmittable.
+                 fillOptions() in main.js sets .required once there are real options. -->
+            <select id="option" name="option">
+              <option value="">I&rsquo;ll advise on the option</option>
             </select>
             <span class="err">Pick the option you'd like.</span>
           </div>
@@ -965,7 +969,7 @@ def about_page():
   <div class="wrap">
     <p class="eyebrow">About</p>
     <h1>I'm Ash. I detail one car a day.</h1>
-    <p class="lead">Ash's Vehicle Valet and Detailing Ltd is one person, one van, and a diary that only ever has one vehicle in it per day. That's not a marketing line &mdash; it's the whole business model.</p>
+    <p class="lead">Ash's Vehicle Valet and Detailing Ltd is one person, one diary, and only ever one vehicle in it per day. I load the kit into my own car and drive to you. That's not a marketing line &mdash; it's the whole business model.</p>
   </div>
 </section>
 
@@ -1136,8 +1140,10 @@ def areas_hub():
   <div class="wrap">
     <p class="eyebrow">Areas covered</p>
     <h1>I come to you, right across Kent.</h1>
-    <p class="lead">I'm based in Hersden, just outside Canterbury, and I travel to your home or workplace. From the
-    coast at Whitstable to Tunbridge Wells in the west, and out to the London outskirts.</p>
+    <p class="lead">I'm based in Hersden, just outside Canterbury, and I travel to your home or workplace.
+    I cover the whole of Kent &mdash; from the coast at Whitstable and Folkestone to Tunbridge Wells in the
+    west, and out to the London outskirts. The towns below are simply where I am most often, not the limit
+    of where I'll go.</p>
     <div class="hero__actions" style="margin-top:1.75rem">
       <a class="btn btn--primary btn--lg" href="/book/">Book your detail</a>
       <a class="btn btn--ghost btn--lg" href="tel:{PHONE}">Call {PHONE_D}</a>
@@ -1149,7 +1155,8 @@ def areas_hub():
   <div class="wrap">
     <div class="head head--center">
       <h2>Where I work</h2>
-      <p class="lead">No travel surcharge anywhere on this list.</p>
+      <p class="lead">The areas I'm in most weeks. No travel surcharge anywhere on this list &mdash; and if
+      your town isn't on it, I almost certainly still come to you.</p>
     </div>
     <div class="areas">{cards}</div>
   </div>
@@ -1177,10 +1184,16 @@ def areas_hub():
   <div class="wrap" style="max-width:760px">
     <div class="head head--center">
       <h2>Not on the list?</h2>
-      <p class="lead">Send me your postcode. For a full day's work I'll usually travel further than the list
-      suggests &mdash; and I'd rather give you a straight yes or no than have you guess.</p>
+      <p class="lead">Anywhere in Kent, just ask &mdash; the list above is where I am most weeks, not a
+      boundary. Send me your postcode and I'd rather give you a straight yes or no than have you guess.</p>
     </div>
-    <p class="center"><a class="btn btn--primary btn--lg" href="/contact/">Ask about your area</a></p>
+    <div class="measure" style="margin:0 auto">
+      <p>I'll look at work outside Kent too. It tends to make sense on the bigger jobs &mdash; a full paint
+      correction, a ceramic coating, or the Ultimate Experience &mdash; where I'm with the car all day anyway
+      and the drive is worth making. For those I'd usually add somewhere between &pound;50 and &pound;100 for
+      the travel depending on how far it is, and you'll know that number before you commit to anything.</p>
+    </div>
+    <p class="center" style="margin-top:2rem"><a class="btn btn--primary btn--lg" href="/contact/">Ask about your area</a></p>
   </div>
 </section>
 
@@ -1190,12 +1203,58 @@ def areas_hub():
         "areas",
         title="Areas Covered Across Kent | Ash's Detailing",
         description=(
-            "Mobile car detailing in Canterbury, Whitstable, Sittingbourne, Ashford, Medway, Maidstone, Tonbridge and Tunbridge Wells. I travel to you."
+            "Mobile car detailing across the whole of Kent — Canterbury, Whitstable, Ashford, Folkestone, Medway, Maidstone and beyond. I travel to you."
         ),
         body=body, schemas=[breadcrumbs([("Home", "/"), ("Areas", "/areas/")])],
         nav_key="areas", priority="0.8",
     )
 
+
+
+def thanks_page():
+    """Where Netlify sends people after a successful booking enquiry.
+
+    noindex + out of the sitemap: it's only reachable after a POST, and a
+    thank-you page in the search results is a dead end for anyone who lands
+    on it cold.
+    """
+    body = f"""
+<section class="phead phead--img">
+  {phead_bg("ba/after-1-4.jpg", 0.55)}
+  <div class="wrap">
+    <p class="eyebrow">Enquiry sent</p>
+    <h1>Thanks &mdash; that's with me.</h1>
+    <p class="lead">I've got your details and I'll come back to you with a date I can actually commit to,
+    usually the same day. Nothing is booked and no payment is due until we've agreed that date.</p>
+    <div class="hero__actions" style="margin-top:1.75rem">
+      <a class="btn btn--primary btn--lg" href="tel:{PHONE}">Call {PHONE_D}</a>
+      <a class="btn btn--ghost btn--lg" href="/">Back to the site</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap" style="max-width:760px">
+    <div class="callout">
+      <h2>What happens next</h2>
+      <ol class="steps" style="margin-top:1.25rem">
+        <li><div><b>I reply, usually same day</b><p>With a date I can actually commit to.</p></div></li>
+        <li><div><b>You confirm</b><p>A {SITE['deposit']} deposit secures the slot and the products.</p></div></li>
+        <li><div><b>I arrive and get to work</b><p>Yours is the only car I touch that day.</p></div></li>
+        <li><div><b>Balance on completion</b><p>Cash or bank transfer.</p></div></li>
+      </ol>
+      <p style="margin-top:1.5rem">If it's urgent, or you'd rather talk it through, ring or text me on
+      <a href="tel:{PHONE}">{PHONE_D}</a> &mdash; that's usually faster than waiting on email.</p>
+    </div>
+  </div>
+</section>
+"""
+    write_page(
+        "thanks",
+        title="Enquiry Sent | Ash's Detailing",
+        description="Your booking enquiry has been sent. I'll come back to you with a date, usually the same day.",
+        body=body, nav_key="book", noindex=True, in_sitemap=False,
+    )
 
 
 def build():
@@ -1205,6 +1264,7 @@ def build():
         service_page(s)
     pricing_page()
     book_page()
+    thanks_page()
     gallery_page()
     reviews_page()
     about_page()

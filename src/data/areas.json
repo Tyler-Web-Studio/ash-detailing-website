@@ -25,7 +25,7 @@
     "distance": "17 miles",
     "postcodes": "ME9 · ME10",
     "lead": "Straight along the A299 and M2 — an easy run, and a regular part of my week.",
-    "body": "Sittingbourne is a commuter town, and commuter cars have a particular problem: motorway film. Weeks of M2 and M20 driving lay down a bonded layer of road grime, diesel residue and iron fallout that a wash simply glides over. It's what makes a 'clean' car still look flat.\n\nThe clay bar and fallout removal stages in the Premium Exterior Detail are what actually fix that. If your car looks dull even straight after washing, this is almost always why.",
+    "body": "Sittingbourne is a commuter town, and commuter cars have a particular problem: motorway film. Weeks of M2 and M20 driving lay down a bonded layer of road grime, diesel residue and iron fallout that a wash simply glides over. It's what makes a 'clean' car still look flat.\n\nThe chemical decontamination and fallout removal stages in the Premium Exterior Detail are what actually fix that. If your car looks dull even straight after washing, this is almost always why.",
     "popular": ["exterior-detail", "interior-exterior-detail", "paint-correction"],
     "note": "Motorway commuters — ask about the multi-stage decontamination."
   },
@@ -38,6 +38,16 @@
     "body": "Ashford has a lot of newer cars on finance and lease agreements, and that changes what matters. If you're handing a car back, the difference between a clean car and a properly detailed one is the difference between a clean bill and a damage charge for scuffs, stained seats or kerbed alloys.\n\nA Premium Interior Detail plus SMART alloy repair before an end-of-lease inspection routinely costs less than the charges it prevents. Worth booking a few weeks before the handover date rather than the week of.",
     "popular": ["interior-detail", "smart-repair", "interior-exterior-detail"],
     "note": "End-of-lease handbacks — book a few weeks ahead of your inspection."
+  },
+  {
+    "slug": "folkestone",
+    "name": "Folkestone",
+    "distance": "22 miles",
+    "postcodes": "CT18 · CT19 · CT20",
+    "lead": "Down the A2 and along the coast — Folkestone, Hythe and the villages behind them are a regular run for me.",
+    "body": "Folkestone sits right on the water, and coastal cars pay for it. Salt carries a long way inland on an onshore wind, and it settles on paint, alloys and brightwork whether the car is parked on the front or a mile back from it. Left alone it dulls lacquer and pits wheel finishes.\n\nProtection matters more here than cleaning does. A ceramic coating or the upgraded sealant in the Premium Exterior Detail gives the salt something to attack that isn't your paint.",
+    "popular": ["exterior-detail", "ceramic-coating", "interior-exterior-detail"],
+    "note": "Coastal salt exposure — worth asking about protection, not just a clean."
   },
   {
     "slug": "medway",

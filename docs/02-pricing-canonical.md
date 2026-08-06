@@ -1,8 +1,23 @@
 # Canonical price list
 
-**Confirmed with Ash 31 July 2026.** This document is the single source of truth. Machine-readable copy lives at `src/data/pricing.json` — the site is generated from that file, so changing a price is a one-line edit in one place.
+**Confirmed with Ash 31 July 2026. Re-verified against the live booking flow 6 August 2026 — all 28 package prices matched, zero changes required.**
+
+This document mirrors `src/data/pricing.json`, which is what the site is generated from. Changing a price is a one-line edit in one place.
 
 All prices in GBP. **Not VAT registered** — the quoted price is the price paid.
+
+## Which live source wins
+
+Ash's old site carries **two** price lists, and as of 6 August 2026 they disagree:
+
+| Source | Status |
+|---|---|
+| **The booking flow** (`/book-now/` Ecwid store) | ✅ **CANONICAL.** This is where customers receive their actual quoted price. Verified option-by-option on 6 Aug 2026; matches `pricing.json` exactly. |
+| The marketing page (`/our-services-and-prices/`) | ❌ **Do not use.** Hand-edited 6 Aug 2026 and now inconsistent with the booking flow — it shows Premium Exterior £120 vs £140, Premium Interior £180 vs £150, Ceramic "£400+" vs £340, and Ultimate £800 vs £600. |
+
+**Rule: the booking flow is the source of truth, because that is the number the customer is actually charged.** If the two ever disagree again, take the booking flow and get the marketing page corrected — never the reverse.
+
+> ⏳ **Open — needs Ash.** *The Ultimate Experience* has **no booking-flow entry**, so there is no canonical number for it. Our site says **£600**; her marketing page was changed to **£800** on 6 Aug 2026. Left at £600 pending her confirmation. This is the only unresolved price on the site.
 
 ---
 
@@ -14,13 +29,13 @@ All prices in GBP. **Not VAT registered** — the quoted price is the price paid
 | Premium | +£40 | **£140** |
 | Large Van (basic) | +£20 | **£120** |
 | Caravan (basic) | +£50 | **£150** |
-| Premium Large Van | +£40 ⚠️ | **£140** |
+| Premium Large Van | +£40 | **£140** |
 | Premium Caravan | +£70 | **£170** |
 | Premium + 2-step machine polish | +£150 | **£250** |
 | Premium XL + 2-step polish (vans) | +£200 | **£300** |
 | Caravans (full) | +£350 | **£450** |
 
-> ⚠️ **Query for Ash:** *Premium Large Van* comes out at £140 — the same as a standard car Premium — even though *Large Van basic* carries a +£20 surcharge. Expected +£60 (= £160). Left as-is in the build pending confirmation.
+> ✅ **Resolved.** *Premium Large Van* comes out at £140 — the same as a standard car Premium — even though *Large Van basic* carries a +£20 surcharge. Confirmed correct by Ash (31 July 2026) and re-confirmed against the live booking flow (6 Aug 2026). **Do not "fix" this.**
 
 ## 2. Interior Detail — from £130
 
@@ -62,7 +77,7 @@ Exterior only. Includes full exterior detail + 2-step polish + coating.
 
 | Service | Price | Notes |
 |---|---|---|
-| **The Ultimate Experience** | **£600** | Drop-off only, 2-day full transformation. Premium interior & exterior detail, 2–3 step polish, 5-year ceramic coating, chrome/rubber/vinyl restoration, glass shield, interior protection, alloy deep clean, engine bay detail, air-con decontamination, exhaust metal polish, seat removal, headlight restoration. |
+| **The Ultimate Experience** ⏳ | **£600** | ⏳ *Not in the booking flow — her marketing page now says £800. Awaiting Ash's confirmation; see the note at the top.* Drop-off only, 2-day full transformation. Premium interior & exterior detail, 2–3 step polish, 5-year ceramic coating, chrome/rubber/vinyl restoration, glass shield, interior protection, alloy deep clean, engine bay detail, air-con decontamination, exhaust metal polish, seat removal, headlight restoration. |
 | **Maintenance plan** | **£70 / month** | Only available after a full interior/exterior detail, so the vehicle starts in the right condition. |
 
 ## 6. Specialist work (quoted)

@@ -618,8 +618,14 @@ def phead_bg(rel: str, focus: float = 0.5) -> str:
 def write_page(path: str, *, title: str, description: str, body: str,
                schemas: list | None = None, og_image: str = "og.jpg",
                nav_key: str = "", priority: str = "0.6",
-               body_class: str = "") -> None:
-    """path: '' for home, 'services/exterior-detail' otherwise."""
+               body_class: str = "", noindex: bool = False,
+               in_sitemap: bool = True) -> None:
+    """path: '' for home, 'services/exterior-detail' otherwise.
+
+    noindex/in_sitemap exist for pages that must not rank — the post-enquiry
+    thank-you page is only reachable after a form POST, so indexing it would
+    put a dead-end page in search results.
+    """
     url = f"{SITE['url']}/{path + '/' if path else ''}"
     blocks = "\n".join(
         f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False, separators=(",", ":"))}</script>'
@@ -643,7 +649,7 @@ def write_page(path: str, *, title: str, description: str, body: str,
                             cls="brand__mark", priority=True),
             # header mark is 50px; the hero mark is up to 236px on phones
             "year": "2026",
-            "robots": ("noindex, nofollow" if PREVIEW
+            "robots": ("noindex, nofollow" if (PREVIEW or noindex)
                        else "index, follow, max-image-preview:large"),
             "preview_banner": (
                 '<div class="pvw">Preview for review &mdash; not the live site. '
@@ -655,7 +661,8 @@ def write_page(path: str, *, title: str, description: str, body: str,
     target = DIST / path / "index.html" if path else DIST / "index.html"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(out, encoding="utf-8")
-    PAGES.append({"loc": url, "priority": priority})
+    if in_sitemap:
+        PAGES.append({"loc": url, "priority": priority})
 
 
 def nav_html(active: str) -> str:
@@ -873,7 +880,11 @@ def write_redirects():
         "# old page URLs",
     ]
     for old, new in rules.items():
-        lines.append(f"RedirectMatch 301 ^{old}?$ {new}")
+        # A trailing '*' is Netlify splat syntax; Apache needs a real regex.
+        if old.endswith("*"):
+            lines.append(f"RedirectMatch 301 ^{old[:-1]}.*$ {new}")
+        else:
+            lines.append(f"RedirectMatch 301 ^{old}?$ {new}")
     (DIST / ".htaccess").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

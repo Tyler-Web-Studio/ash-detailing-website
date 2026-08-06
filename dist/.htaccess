@@ -7,6 +7,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 # old page URLs
 RedirectMatch 301 ^/book-now/?$ /book/
+RedirectMatch 301 ^/book-now/.*$ /book/
 RedirectMatch 301 ^/contact-us/?$ /contact/
 RedirectMatch 301 ^/faq-s/?$ /faq/
 RedirectMatch 301 ^/our-services-and-prices/?$ /services/

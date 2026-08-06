@@ -121,7 +121,7 @@
 <li><a href="/pricing/">Pricing</a></li>
 <li><a href="/gallery/">Gallery</a></li>
 <li><a href="/reviews/">Reviews<span>29</span></a></li>
-<li><a href="/areas/">Areas<span>9</span></a></li>
+<li><a href="/areas/">Areas<span>10</span></a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/contact/">Contact</a></li></ul>
   <div class="mnav__foot">
@@ -153,9 +153,9 @@
 
 <section class="sec">
   <div class="wrap split" style="align-items:start">
-    <form class="form" id="bookform" method="post" action="https://formsubmit.co/ashs_vvad_ltd@icloud.com">
-      <input type="hidden" name="_subject" value="New booking enquiry — website">
-      <input type="hidden" name="_template" value="table">
+    <form class="form" id="bookform" method="post" action="/thanks/"
+          name="booking" data-netlify="true" data-netlify-honeypot="_honey">
+      <input type="hidden" name="form-name" value="booking">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <fieldset class="fieldset">
@@ -188,7 +188,7 @@
         <div class="frow">
           <div class="field">
             <label for="area">Nearest town</label>
-            <select id="area" name="area"><option value="">Choose&hellip;</option><option value="Canterbury">Canterbury</option><option value="Whitstable">Whitstable</option><option value="Sittingbourne">Sittingbourne</option><option value="Ashford">Ashford</option><option value="Medway">Medway</option><option value="Maidstone">Maidstone</option><option value="Tonbridge">Tonbridge</option><option value="Tunbridge Wells">Tunbridge Wells</option><option value="London Outskirts">London Outskirts</option><option value="Other">Somewhere else</option></select>
+            <select id="area" name="area"><option value="">Choose&hellip;</option><option value="Canterbury">Canterbury</option><option value="Whitstable">Whitstable</option><option value="Sittingbourne">Sittingbourne</option><option value="Ashford">Ashford</option><option value="Folkestone">Folkestone</option><option value="Medway">Medway</option><option value="Maidstone">Maidstone</option><option value="Tonbridge">Tonbridge</option><option value="Tunbridge Wells">Tunbridge Wells</option><option value="London Outskirts">London Outskirts</option><option value="Other">Somewhere else</option></select>
           </div>
         </div>
       </fieldset>
@@ -224,8 +224,12 @@
           <div class="field" id="optionfield">
             <label for="option">Option <span class="req">*</span>
               <span class="hint">Premium is the most booked</span></label>
-            <select id="option" name="option" required>
-              <option value="">Choose a service first&hellip;</option>
+            <!-- Deliberately NOT required in the markup: the list is populated by main.js.
+                 With JS blocked this select only ever holds the empty placeholder, so a
+                 required attribute here would make the form permanently unsubmittable.
+                 fillOptions() in main.js sets .required once there are real options. -->
+            <select id="option" name="option">
+              <option value="">I&rsquo;ll advise on the option</option>
             </select>
             <span class="err">Pick the option you'd like.</span>
           </div>
