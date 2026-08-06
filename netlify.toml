@@ -35,20 +35,6 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
     Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), interest-cohort=()"
-    # Every origin below was inventoried from the built output — do not tighten
-    # without re-checking, and do not loosen to add a tracker without asking.
-    #   script-src  : one inline script in base.html sets the .js class. It is
-    #                 pinned by hash, so 'unsafe-inline' is NOT needed. If you
-    #                 ever edit that line, the hash must be regenerated or the
-    #                 reveal animations will stop working.
-    #   style-src   : 'unsafe-inline' is required — the pages use style="…"
-    #                 attributes, which cannot be hashed.
-    #   img-src     : data: covers the 43-byte transparent GIF the hero falls
-    #                 back to on mobile. i.ytimg.com serves video thumbnails.
-    #   frame-src   : youtube-nocookie is the click-to-load player; the
-    #                 openstreetmap embed is the map on /contact/.
-    #   form-action : 'self' only. Booking enquiries post to our own /thanks/
-    #                 via Netlify Forms, so nothing should ever post off-site.
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-qOhFsq0QMV2REqNwk5hGH5bZE9SkX6gt6yeyKdYPv+U='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com; font-src 'self'; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.openstreetmap.org; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
 
 # --- keep non-production deploys out of the index --------------------------
