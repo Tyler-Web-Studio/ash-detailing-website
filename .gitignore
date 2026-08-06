@@ -5,6 +5,12 @@ __pycache__/
 *.pyc
 .venv/
 
+# --- node ------------------------------------------------------------------
+# This site has no Node toolchain: build.py (Python 3 + Pillow) generates it and
+# the only client JS is a hand-written 4.5 KB main.js. node_modules must never
+# be committed — an accidental `npm i` here adds ~11 MB of vendored packages.
+node_modules/
+
 # --- OS / editor ----------------------------------------------------------
 .DS_Store
 .claude/
