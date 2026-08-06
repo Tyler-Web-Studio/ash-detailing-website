@@ -2,9 +2,9 @@
   <div class="wrap ubar__inner">
     <p class="ubar__tag">Mobile detailing &middot; Canterbury &amp; Kent</p>
     <div class="ubar__right">
-      <a class="ubar__link" href="tel:+447907019798">
+      <a class="ubar__link" href="tel:{{ phone }}">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.6a1 1 0 0 1-.25 1z"/></svg>
-        07907 019798</a>
+        {{ phone_display }}</a>
       <a class="ubar__link ubar__link--email" href="mailto:ashs_vvad_ltd@icloud.com">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.5 7v10h15V7z"/></svg>
         ashs_vvad_ltd@icloud.com</a>
@@ -45,9 +45,9 @@
            unconditionally (.btn--call span { display:none }), and the svg is
            aria-hidden, so without it this link has no accessible name at all on
            any viewport. Flagged by Lighthouse as link-name. -->
-      <a class="btn btn--call" href="tel:+447907019798" aria-label="Call 07907 019798">
+      <a class="btn btn--call" href="tel:{{ phone }}" aria-label="Call {{ phone_display }}">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.6a1 1 0 0 1-.25 1z"/></svg>
-        <span>07907 019798</span>
+        <span>{{ phone_display }}</span>
       </a>
       <a class="btn btn--primary" href="/book/">Book</a>
       <label class="burger" for="navtoggle" aria-hidden="true">
@@ -79,7 +79,7 @@
   <ul class="mnav__list">{{{ mnav }}}</ul>
   <div class="mnav__foot">
     <a class="btn btn--primary btn--lg" href="/book/">Book your detail</a>
-    <a class="btn btn--ghost btn--lg" href="tel:+447907019798">Call 07907 019798</a>
+    <a class="btn btn--ghost btn--lg" href="tel:{{ phone }}">Call {{ phone_display }}</a>
     <div class="mnav__meta">
       <span>One car a day</span>
       <span>&middot;</span>

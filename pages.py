@@ -13,6 +13,8 @@ from build import (
 
 PHONE = SITE["phone"]
 PHONE_D = SITE["phoneDisplay"]
+# Derived, not stored: a second copy of the number in site.json would drift.
+WHATSAPP = f"https://wa.me/{PHONE.lstrip('+')}"
 BRAND = SITE["name"].replace(" Ltd", "")  # apostrophes are awkward inside f-strings
 
 ICONS = {
@@ -761,7 +763,7 @@ def book_page():
         <p>If you're not sure what your car needs, a two-minute call usually sorts it faster than a form.</p>
         <p style="margin-top:1rem">
           <a class="btn btn--primary" href="tel:{PHONE}">Call {PHONE_D}</a>
-          <a class="btn btn--ghost" href="https://wa.me/447907019798" rel="noopener" target="_blank">WhatsApp</a>
+          <a class="btn btn--ghost" href="{WHATSAPP}" rel="noopener" target="_blank">WhatsApp</a>
         </p>
       </div>
 
@@ -1082,7 +1084,7 @@ def contact_page():
         <p>Quickest way to get an answer. If I'm mid-detail I'll come back to you the same day.</p>
         <p style="margin-top:1.25rem">
           <a class="btn btn--primary" href="tel:{PHONE}">Call {PHONE_D}</a>
-          <a class="btn btn--ghost" href="https://wa.me/447907019798" rel="noopener" target="_blank">WhatsApp</a>
+          <a class="btn btn--ghost" href="{WHATSAPP}" rel="noopener" target="_blank">WhatsApp</a>
         </p>
         <p style="margin-top:1rem"><a href="mailto:{SITE['email']}">{SITE['email']}</a></p>
       </div>
@@ -1116,7 +1118,7 @@ def contact_page():
         "contact",
         title="Contact | Mobile Car Detailing in Kent | Ash's Detailing",
         description=(
-            "Call 07907 019798 or message Ash for mobile car detailing across Canterbury and Kent. Honest advice on what your vehicle needs, no pressure."
+            f"Call {PHONE_D} or message Ash for mobile car detailing across Canterbury and Kent. Honest advice on what your vehicle needs, no pressure."
         ),
         body=body, schemas=[business_schema(), breadcrumbs([("Home", "/"), ("Contact", "/contact/")])],
         nav_key="contact", priority="0.8",

@@ -642,6 +642,13 @@ def write_page(path: str, *, title: str, description: str, body: str,
             "body": body,
             "schema": blocks,
             "site_name": SITE["name"],
+            # Phone comes from site.json so there is one source of truth. The
+            # partials (_header, _footer, _mobilebar) are inlined by render()
+            # before substitution, so they read these too. wa.me is derived
+            # rather than stored — a second copy of the number would drift.
+            "phone": SITE["phone"],
+            "phone_display": SITE["phoneDisplay"],
+            "whatsapp": f"https://wa.me/{SITE['phone'].lstrip('+')}",
             "body_class": body_class,
             "nav": nav_html(nav_key),
             "mnav": mobile_nav_html(nav_key),
