@@ -41,7 +41,11 @@
     </nav>
 
     <div class="hdr__actions">
-      <a class="btn btn--call" href="tel:+447907019798">
+      <!-- aria-label is required, not belt-and-braces: main.css hides the span
+           unconditionally (.btn--call span { display:none }), and the svg is
+           aria-hidden, so without it this link has no accessible name at all on
+           any viewport. Flagged by Lighthouse as link-name. -->
+      <a class="btn btn--call" href="tel:+447907019798" aria-label="Call 07907 019798">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.6a1 1 0 0 1-.25 1z"/></svg>
         <span>07907 019798</span>
       </a>
