@@ -54,15 +54,33 @@
 # --- keep non-production deploys out of the index --------------------------
 # Deploy Previews (PRs) and branch deploys are public URLs. Without this they
 # can be crawled and compete with the real site. Production is untouched.
+#
+# ⚠️ THE FULL HEADER SET IS REPEATED BELOW ON PURPOSE. A context block that
+# matches the same path as a base [[headers]] rule REPLACES it for that
+# context rather than merging into it. Verified empirically on deploy preview
+# #2: with only X-Robots-Tag here, the CSP and Permissions-Policy from the
+# base "/*" rule stopped being served on the preview. If you add a header to
+# the base "/*" rule, add it here too or it will silently vanish from every
+# preview — which is exactly where we test things.
 [[context.deploy-preview.headers]]
   for = "/*"
   [context.deploy-preview.headers.values]
     X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), interest-cohort=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-qOhFsq0QMV2REqNwk5hGH5bZE9SkX6gt6yeyKdYPv+U='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com; font-src 'self'; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.openstreetmap.org; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
 
 [[context.branch-deploy.headers]]
   for = "/*"
   [context.branch-deploy.headers.values]
     X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), interest-cohort=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-qOhFsq0QMV2REqNwk5hGH5bZE9SkX6gt6yeyKdYPv+U='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com; font-src 'self'; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.openstreetmap.org; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
 
 # The 301s from the old IONOS URLs live in dist/_redirects, which Netlify picks
 # up automatically. Don't duplicate them here — _redirects wins either way.
