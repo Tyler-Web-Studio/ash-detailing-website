@@ -1,9 +1,8 @@
 {
   "_note": "Privacy policy content. Rendered by pages.py -> /privacy/. Written from what the site VERIFIABLY does — the booking form fields, Netlify Forms storage, and the fact that the site sets no cookies and runs no analytics. Anything that could not be sourced is marked [ASH TO CONFIRM] and MUST be resolved before launch. This is not legal advice and has not been reviewed by a solicitor.",
   "_todo": [
-    "Retention period — how long Ash keeps enquiry and customer records. Suggested 24 months for enquiries, 6 years for completed jobs (UK company record-keeping), but Ash decides.",
-    "ICO registration — most UK businesses processing personal data must register with the Information Commissioner's Office and pay the annual data protection fee (currently tiered, smallest tier £52/yr). Ash should check her position at ico.org.uk/registration and add the number here if she registers.",
-    "Confirm whether Ash keeps customer photos of vehicles and whether they may be used on social media — if so that needs its own paragraph and a consent route."
+    "Ash confirmed she is a mobile business with no CCTV and no dashcam, and keeps customer details only to quote, do the job and invoice — so she falls within the ICO's 'accounts and records' exemption and pays no data protection fee. Re-check if that ever changes (a dashcam or any CCTV removes the exemption).",
+    "Netlify Forms retains every submission in the dashboard until deleted. To honour the 12-month retention above, old submissions need clearing out periodically — this is not automatic."
   ],
   "updated": "6 August 2026",
   "intro": "This policy explains what I do with your information when you enquire about or book a detail. I'm a one-person business and I collect as little as I can get away with — just enough to give you a price and turn up at the right place on the right day.",
@@ -30,7 +29,7 @@
     },
     {
       "heading": "How long I keep it",
-      "body": "[ASH TO CONFIRM] — enquiries that don't turn into a booking are kept for a limited period and then deleted. Records of completed work are kept for as long as company record-keeping requires.\n\nIf you'd like your details removed sooner, just ask and I'll do it."
+      "body": "Enquiries that don't turn into a booking are kept for **12 months** and then deleted.\n\nRecords of completed work are kept for **6 years**, because a limited company has to keep its business and accounting records for that long.\n\nIf you'd like your details removed sooner, just ask and I'll do it."
     },
     {
       "heading": "Your rights",
