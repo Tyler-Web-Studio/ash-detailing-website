@@ -267,10 +267,20 @@
         </div>
         <div class="frow">
           <div class="field">
-            <label class="check">
-              <input type="checkbox" name="access" value="yes" required>
-              <span>I can provide a parking space by the vehicle with access to water and electricity (within 30m). <span class="req">*</span></span>
-            </label>
+            <!-- Deliberately NOT required. This is a judgement call on the day
+                 and there's usually a way round it — the Areas page says exactly
+                 that. As a mandatory tick it blocked anyone unsure whether they
+                 had an outside tap from enquiring at all, which loses precisely
+                 the customers worth ringing. A three-way answer also tells Ash
+                 more than a forced tick did. -->
+            <label for="access">Parking, water and electricity
+              <span class="hint">I carry 30m of hose and extension lead</span></label>
+            <select id="access" name="access">
+              <option value="">Choose&hellip;</option>
+              <option value="Yes — parking, water and electricity all available">Yes, all three are available</option>
+              <option value="Not sure — please advise">Not sure &mdash; please advise</option>
+              <option value="No, or it needs discussing">No, or it's complicated</option>
+            </select>
           </div>
         </div>
         <div class="frow">
