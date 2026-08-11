@@ -3,7 +3,7 @@
 
 import build as b
 from build import (
-    SITE, PRICING, SERVICES, AREAS, FAQS, REVIEWS, GALLERY, BEFOREAFTER, SERVICE_BY_SLUG,
+    SITE, PRICING, SERVICES, AREAS, FAQS, REVIEWS, GALLERY, BEFOREAFTER, PRIVACY, SERVICE_BY_SLUG,
     e, money, markdown_lite, picture, hero_picture, before_after, price_table, cta_band, faq_list,
     configurator, booking_options, options_map, phead_bg,
     service_card, stars, crumbs_html, write_page,
@@ -13,6 +13,8 @@ from build import (
 
 PHONE = SITE["phone"]
 PHONE_D = SITE["phoneDisplay"]
+# Derived, not stored: a second copy of the number in site.json would drift.
+WHATSAPP = f"https://wa.me/{PHONE.lstrip('+')}"
 BRAND = SITE["name"].replace(" Ltd", "")  # apostrophes are awkward inside f-strings
 
 ICONS = {
@@ -50,6 +52,33 @@ def google_panel(compact: bool = False) -> str:
     <a class="btn btn--ghost" href="{url}" rel="noopener nofollow" target="_blank">Leave a review</a>
   </div>
 </div>"""
+
+
+def ask_band() -> str:
+    """'Not sure? Ask.' — for people who don't know which package they need.
+
+    Deliberately offers three ways to reach Ash, because the ones who are unsure
+    are exactly the ones least likely to fill in a booking form.
+    """
+    return f"""<section class="sec sec--alt">
+  <div class="wrap" style="max-width:820px">
+    <div class="head head--center">
+      <p class="eyebrow">Not sure?</p>
+      <h2>Ask me anything.</h2>
+      <p class="lead">You don't need to know what your car needs &mdash; that's my job. Send a couple of photos
+      and tell me what's bothering you about it, and I'll tell you which package fits, including when the
+      cheaper one will do the job. No pressure, and no obligation to book.</p>
+    </div>
+    <p class="center" style="margin-top:2rem">
+      <a class="btn btn--primary btn--lg" href="/contact/">Ask a question</a>
+      <a class="btn btn--ghost btn--lg" href="tel:{PHONE}">Call {PHONE_D}</a>
+      <a class="btn btn--ghost btn--lg" href="{WHATSAPP}" rel="noopener" target="_blank">WhatsApp</a>
+    </p>
+    <p class="note center" style="margin-top:1.25rem">Common questions are answered on the
+      <a href="/faq/">FAQ page</a> &mdash; water and electricity, insurance, how booking and payment work,
+      and what happens if the car is in really bad condition.</p>
+  </div>
+</section>"""
 
 
 def trust_row() -> str:
@@ -125,7 +154,7 @@ def home():
     ba = "".join(f'<div class="rv">{before_after(x)}</div>' for x in BEFOREAFTER["pairs"][:2])
 
     steps = [
-        ("Decontaminate", "Citrus pre-wash, snow foam, fallout remover and clay bar. Nothing gets touched until the grit is off &mdash; that's what causes swirl marks."),
+        ("Decontaminate", "Citrus pre-wash, snow foam and a full chemical decontamination &mdash; iron fallout and tar dissolved off the paint rather than rubbed off it. Nothing gets touched until the grit is gone &mdash; that's what causes swirl marks."),
         ("Wash safely", "Two buckets, fresh microfibre mitts, non-acidic wheel cleaner. Every panel by hand."),
         ("Correct", "Machine polish where the paint needs it. 70&ndash;80% of swirls and light scratches, cut out properly."),
         ("Deep clean inside", "Extraction, steam and sanitisation. Vents, seams, stitch lines, panel gaps &mdash; fine-pick detailing throughout."),
@@ -214,7 +243,7 @@ def home():
       <p class="lead">Every package comes in Basic or Premium. Not sure which? Send photos and I'll tell you what your car actually needs &mdash; including when the cheaper one is the right call.</p>
     </div>
     <div class="tiers">{''.join(tiers)}</div>
-    <p class="center" style="margin-top:2.5rem"><a class="btn btn--ghost" href="/pricing/">See every price, including surcharges</a></p>
+    <p class="center" style="margin-top:2.5rem"><a class="btn btn--ghost" href="/services/">See every price, including surcharges</a></p>
   </div>
 </section>
 
@@ -307,15 +336,58 @@ def home():
 # --------------------------------------------------------------------------
 
 def services_hub():
+    """Services AND prices on one page.
+
+    Ash's old site had a single 'Our Services and Prices' page and splitting it
+    made people hunt for the number next to the thing they were reading about.
+    The per-service pages still exist — they carry the full includes-lists and
+    rank for their own terms — but nobody has to visit two pages to find a price.
+    """
     cards = "".join(f'<div class="rv">{service_card(s)}</div>' for s in SERVICES)
+
+    blocks = []
+    for key, pkg in PRICING["packages"].items():
+        blocks.append(f"""<div class="stack" style="margin-bottom:3rem">
+  <h3 id="{key}">{e(pkg['name'])}</h3>
+  {price_table(key)}
+  <p><a href="/services/{key}/">Everything included in a {pkg['name'].lower()} &rarr;</a></p>
+</div>""")
+
+    flag = "".join(
+        f"""<tr><th scope="row"><a href="/services/{f['slug']}/">{e(f['name'])}</a><br>
+<span class="note" style="margin:0">{e(f['note'])}</span></th>
+<td class="num total" data-label="Price">{money(f['price'])}{e(f['unit'])}</td></tr>"""
+        for f in PRICING["flagship"]
+    )
+    spec = "".join(
+        f"""<tr><th scope="row">{e(s['name'])}<br><span class="note" style="margin:0">{e(s['note'])}</span></th>
+<td class="num total" data-label="Price">{e(s['price'])}<br><span class="note" style="margin:0">{e(s['qualifier'])}</span></td></tr>"""
+        for s in PRICING["specialist"]
+    )
+    add = "".join(
+        f'<tr><th scope="row">{e(a["name"])}{f" <span class=note style=margin:0>{e(a["note"])}</span>" if a["note"] else ""}</th>'
+        f'<td class="num total" data-label="Price">{money(a["price"])}</td></tr>'
+        for a in PRICING["addons"]
+    )
+    sur = "".join(
+        f'<tr><th scope="row">{e(s["name"])}</th><td class="num total" data-label="Range">{e(s["range"])}</td></tr>'
+        for s in PRICING["surcharges"]
+    )
+    disc = "".join(
+        f"""<div class="tier"><h3>{e(d['name'])}</h3>
+<p class="tier__price"><b>{e(d['value'])}</b></p>
+<p class="tier__desc">{e(d['detail'])}</p></div>"""
+        for d in PRICING["discounts"]
+    )
+
     body = f"""
-{crumbs_html([("Home", "/"), ("Services", "/services/")])}
+{crumbs_html([("Home", "/"), ("Services & prices", "/services/")])}
 <section class="phead phead--img">
   {phead_bg("ba/after-1-6.jpg", 0.5)}
   <div class="wrap">
-    <p class="eyebrow">Services</p>
-    <h1>Everything I offer, and exactly what's in it.</h1>
-    <p class="lead">Eight services, from a straightforward exterior detail at £100 to a two-day full transformation. Every package comes in Basic or Premium &mdash; the difference is spelled out on each page rather than hidden in a dropdown.</p>
+    <p class="eyebrow">Services &amp; prices</p>
+    <h1>Everything I offer, and exactly what it costs.</h1>
+    <p class="lead">Eight services, from a straightforward exterior detail at £100 to a two-day full transformation. Every package, every option and every surcharge is on this page &mdash; nothing appears at checkout that isn't here. I'm not VAT registered, so the price you're quoted is the price you pay.</p>
   </div>
 </section>
 
@@ -323,32 +395,84 @@ def services_hub():
   <div class="wrap">
     <div class="head head--center">
       <h2>Choose your package</h2>
-      <p class="lead">Every one is priced on this site, in full, with the surcharges listed.</p>
+      <p class="lead">Every one comes in Basic or Premium. Tap through for the full list of what's actually done to your car.</p>
     </div>
     <div class="grid grid--3">{cards}</div>
   </div>
 </section>
 
 <section class="sec sec--alt">
-  <div class="wrap">
-    <div class="head head--center">
-      <h2>Not sure which one?</h2>
-      <p class="lead">Send me a couple of photos of your car and tell me what's bothering you about it. I'll tell you which package fits &mdash; including when the cheaper one will do the job.</p>
+  <div class="wrap" style="max-width:900px">
+    <div class="head">
+      <p class="eyebrow">Prices</p>
+      <h2>Every option, with the surcharges.</h2>
+      <p class="lead">Vans, caravans and XL vehicles take longer, so they carry a surcharge &mdash; those are listed here rather than sprung on you.</p>
     </div>
-    <p class="center"><a class="btn btn--primary btn--lg" href="/contact/">Ask me</a></p>
+    {''.join(blocks)}
   </div>
 </section>
 
-{cta_band("Know what you need?", "Book it in and I'll confirm your date.")}
+<section class="sec">
+  <div class="wrap" style="max-width:900px">
+    <h2>Flagship &amp; recurring</h2>
+    <div class="table-wrap" style="margin-top:1.5rem"><table>
+      <thead><tr><th scope="col">Service</th><th scope="col" class="num">Price</th></tr></thead>
+      <tbody>{flag}</tbody></table></div>
+
+    <h2 style="margin-top:3.5rem">Specialist work</h2>
+    <p class="lead" style="margin-top:.75rem">Quoted per job. Send photos and I'll give you a real number rather than a range.</p>
+    <div class="table-wrap" style="margin-top:1.5rem"><table>
+      <thead><tr><th scope="col">Service</th><th scope="col" class="num">Price</th></tr></thead>
+      <tbody>{spec}</tbody></table></div>
+
+    <h2 style="margin-top:3.5rem">Add-ons</h2>
+    <div class="table-wrap" style="margin-top:1.5rem"><table>
+      <thead><tr><th scope="col">Add-on</th><th scope="col" class="num">Price</th></tr></thead>
+      <tbody>{add}</tbody></table></div>
+
+    <h2 style="margin-top:3.5rem">Condition surcharges</h2>
+    <p class="lead" style="margin-top:.75rem">Assessed when I arrive and agreed with you <em>before</em> any work starts. Heavy soiling takes materially longer and uses far more product &mdash; these aren't a surprise at the end.</p>
+    <div class="table-wrap" style="margin-top:1.5rem"><table>
+      <thead><tr><th scope="col">Condition</th><th scope="col" class="num">Range</th></tr></thead>
+      <tbody>{sur}</tbody></table></div>
+  </div>
+</section>
+
+<section class="sec sec--alt">
+  <div class="wrap">
+    <div class="head head--center">
+      <p class="eyebrow">Discounts</p>
+      <h2>Ways to pay less.</h2>
+      <p class="lead">These stack &mdash; a blue light discount and a review credit can be used together.</p>
+    </div>
+    <div class="tiers">{disc}</div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap" style="max-width:820px">
+    <h2>How payment works</h2>
+    <ol class="steps" style="margin-top:2rem">
+      <li><div><b>You enquire</b><p>Tell me the vehicle, what you're after and roughly when. Photos help.</p></div></li>
+      <li><div><b>I confirm a date</b><p>One car a day, so I'll be straight about what's actually free. Nothing is paid at this point.</p></div></li>
+      <li><div><b>{SITE['deposit']} deposit secures it</b><p>That covers the reserved day and the premium products bought in for your car.</p></div></li>
+      <li><div><b>Balance on the day</b><p>Cash or bank transfer. Invoices available on request.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+{ask_band()}
+
+{cta_band("Know what you need?", "Book it in and I'll confirm your date before any deposit.")}
 """
     write_page(
         "services",
         title="Car Detailing Services & Prices, Kent | Ash's Detailing",
         description=(
-            "Interior, exterior and full detailing, machine polishing, ceramic coatings and SMART repair across Kent. Every package explained, from £100."
+            "Every service and price in one place: interior £130, exterior £100, full detail £180, ceramic from £340. Mobile detailing across Kent. No VAT."
         ),
-        body=body, schemas=[breadcrumbs([("Home", "/"), ("Services", "/services/")])],
-        nav_key="services", priority="0.9",
+        body=body, schemas=[breadcrumbs([("Home", "/"), ("Services & prices", "/services/")])],
+        nav_key="services", priority="1.0",
     )
 
 
@@ -357,7 +481,27 @@ def service_page(svc):
     trail = [("Home", "/"), ("Services", "/services/"), (svc["name"], f"/services/{slug}/")]
 
     inc = ""
-    if svc.get("includes"):
+    if svc.get("includeGroups"):
+        # Ash itemises the combined package under her own headings rather than
+        # summarising it — customers want to see exactly what they're buying.
+        groups = "".join(
+            f"""<div class="rv">
+      <h3>{e(g['title'])}</h3>
+      <ul class="ticks">{''.join(f'<li>{e(x)}</li>' for x in g['items'])}</ul>
+    </div>"""
+            for g in svc["includeGroups"]
+        )
+        inc = f"""<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">What's included</p>
+      <h2>Every step, listed.</h2>
+      <p class="lead">{e(svc['forWho'])}</p>
+    </div>
+    <div class="grid grid--2" style="align-items:start">{groups}</div>
+  </div>
+</section>"""
+    elif svc.get("includes"):
         inc = f"""<section class="sec">
   <div class="wrap split">
     <div class="rv">
@@ -474,118 +618,6 @@ def service_page(svc):
 # pricing
 # --------------------------------------------------------------------------
 
-def pricing_page():
-    blocks = []
-    for key, pkg in PRICING["packages"].items():
-        blocks.append(f"""<div class="stack" style="margin-bottom:3rem">
-  <h2 id="{key}">{e(pkg['name'])}</h2>
-  {price_table(key)}
-  <p><a href="/services/{key}/">What's included in a {pkg['name'].lower()} &rarr;</a></p>
-</div>""")
-
-    flag = "".join(
-        f"""<tr><th scope="row"><a href="/services/{f['slug']}/">{e(f['name'])}</a><br>
-<span class="note" style="margin:0">{e(f['note'])}</span></th>
-<td class="num total" data-label="Price">{money(f['price'])}{e(f['unit'])}</td></tr>"""
-        for f in PRICING["flagship"]
-    )
-    spec = "".join(
-        f"""<tr><th scope="row">{e(s['name'])}<br><span class="note" style="margin:0">{e(s['note'])}</span></th>
-<td class="num total" data-label="Price">{e(s['price'])}<br><span class="note" style="margin:0">{e(s['qualifier'])}</span></td></tr>"""
-        for s in PRICING["specialist"]
-    )
-    add = "".join(
-        f'<tr><th scope="row">{e(a["name"])}{f" <span class=note style=margin:0>{e(a["note"])}</span>" if a["note"] else ""}</th>'
-        f'<td class="num total" data-label="Price">{money(a["price"])}</td></tr>'
-        for a in PRICING["addons"]
-    )
-    sur = "".join(
-        f'<tr><th scope="row">{e(s["name"])}</th><td class="num total" data-label="Range">{e(s["range"])}</td></tr>'
-        for s in PRICING["surcharges"]
-    )
-    disc = "".join(
-        f"""<div class="tier"><h3>{e(d['name'])}</h3>
-<p class="tier__price"><b>{e(d['value'])}</b></p>
-<p class="tier__desc">{e(d['detail'])}</p></div>"""
-        for d in PRICING["discounts"]
-    )
-
-    body = f"""
-{crumbs_html([("Home", "/"), ("Pricing", "/pricing/")])}
-<section class="phead phead--img">
-  {phead_bg("ba/after-4-2.jpg", 0.5)}
-  <div class="wrap">
-    <p class="eyebrow">Pricing</p>
-    <h1>Every price, on one page.</h1>
-    <p class="lead">No hidden extras appearing at checkout. Vans, caravans and XL vehicles take longer so they carry a surcharge &mdash; those are listed too. I'm not VAT registered, so the price you're quoted is the price you pay.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap" style="max-width:900px">{''.join(blocks)}</div>
-</section>
-
-<section class="sec sec--alt">
-  <div class="wrap" style="max-width:900px">
-    <h2>Flagship &amp; recurring</h2>
-    <div class="table-wrap" style="margin-top:1.5rem"><table>
-      <thead><tr><th scope="col">Service</th><th scope="col" class="num">Price</th></tr></thead>
-      <tbody>{flag}</tbody></table></div>
-
-    <h2 style="margin-top:3.5rem">Specialist work</h2>
-    <p class="lead" style="margin-top:.75rem">Quoted per job. Send photos and I'll give you a real number rather than a range.</p>
-    <div class="table-wrap" style="margin-top:1.5rem"><table>
-      <thead><tr><th scope="col">Service</th><th scope="col" class="num">Price</th></tr></thead>
-      <tbody>{spec}</tbody></table></div>
-
-    <h2 style="margin-top:3.5rem">Add-ons</h2>
-    <div class="table-wrap" style="margin-top:1.5rem"><table>
-      <thead><tr><th scope="col">Add-on</th><th scope="col" class="num">Price</th></tr></thead>
-      <tbody>{add}</tbody></table></div>
-
-    <h2 style="margin-top:3.5rem">Condition surcharges</h2>
-    <p class="lead" style="margin-top:.75rem">Assessed when I arrive and agreed with you <em>before</em> any work starts. Heavy soiling takes materially longer and uses far more product &mdash; these aren't a surprise at the end.</p>
-    <div class="table-wrap" style="margin-top:1.5rem"><table>
-      <thead><tr><th scope="col">Condition</th><th scope="col" class="num">Range</th></tr></thead>
-      <tbody>{sur}</tbody></table></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="head head--center">
-      <p class="eyebrow">Discounts</p>
-      <h2>Ways to pay less.</h2>
-      <p class="lead">These stack &mdash; a blue light discount and a review credit can be used together.</p>
-    </div>
-    <div class="tiers">{disc}</div>
-  </div>
-</section>
-
-<section class="sec sec--alt">
-  <div class="wrap" style="max-width:820px">
-    <h2>How payment works</h2>
-    <ol class="steps" style="margin-top:2rem">
-      <li><div><b>You enquire</b><p>Tell me the vehicle, what you're after and roughly when. Photos help.</p></div></li>
-      <li><div><b>I confirm a date</b><p>One car a day, so I'll be straight about what's actually free. Nothing is paid at this point.</p></div></li>
-      <li><div><b>20% deposit secures it</b><p>That covers the reserved day and the premium products bought in for your car.</p></div></li>
-      <li><div><b>Balance on the day</b><p>Cash or bank transfer. Invoices available on request.</p></div></li>
-    </ol>
-  </div>
-</section>
-
-{cta_band("Found the one?", "Book it in and I'll confirm your date before any deposit.")}
-"""
-    write_page(
-        "pricing",
-        title="Car Detailing Prices in Kent from £100 | Ash's Detailing",
-        description=(
-            "Full price list for mobile car detailing in Kent. Interior £130, exterior £100, full detail £180, ceramic coating £340. No VAT, no hidden extras."
-        ),
-        body=body, schemas=[breadcrumbs([("Home", "/"), ("Pricing", "/pricing/")])],
-        nav_key="pricing", priority="0.9",
-    )
-
 
 # --------------------------------------------------------------------------
 # book
@@ -613,9 +645,9 @@ def book_page():
 
 <section class="sec">
   <div class="wrap split" style="align-items:start">
-    <form class="form" id="bookform" method="post" action="{SITE['formEndpoint']}">
-      <input type="hidden" name="_subject" value="New booking enquiry — website">
-      <input type="hidden" name="_template" value="table">
+    <form class="form" id="bookform" method="post" action="{SITE['form']['successPath']}"
+          name="{SITE['form']['name']}" data-netlify="true" data-netlify-honeypot="_honey">
+      <input type="hidden" name="form-name" value="{SITE['form']['name']}">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <fieldset class="fieldset">
@@ -684,8 +716,12 @@ def book_page():
           <div class="field" id="optionfield">
             <label for="option">Option <span class="req">*</span>
               <span class="hint">Premium is the most booked</span></label>
-            <select id="option" name="option" required>
-              <option value="">Choose a service first&hellip;</option>
+            <!-- Deliberately NOT required in the markup: the list is populated by main.js.
+                 With JS blocked this select only ever holds the empty placeholder, so a
+                 required attribute here would make the form permanently unsubmittable.
+                 fillOptions() in main.js sets .required once there are real options. -->
+            <select id="option" name="option">
+              <option value="">I&rsquo;ll advise on the option</option>
             </select>
             <span class="err">Pick the option you'd like.</span>
           </div>
@@ -721,17 +757,27 @@ def book_page():
         </div>
         <div class="frow">
           <div class="field">
-            <label class="check">
-              <input type="checkbox" name="access" value="yes" required>
-              <span>I can provide a parking space by the vehicle with access to water and electricity (within 30m). <span class="req">*</span></span>
-            </label>
+            <!-- Deliberately NOT required. This is a judgement call on the day
+                 and there's usually a way round it — the Areas page says exactly
+                 that. As a mandatory tick it blocked anyone unsure whether they
+                 had an outside tap from enquiring at all, which loses precisely
+                 the customers worth ringing. A three-way answer also tells Ash
+                 more than a forced tick did. -->
+            <label for="access">Parking, water and electricity
+              <span class="hint">I carry 30m of hose and extension lead</span></label>
+            <select id="access" name="access">
+              <option value="">Choose&hellip;</option>
+              <option value="Yes — parking, water and electricity all available">Yes, all three are available</option>
+              <option value="Not sure — please advise">Not sure &mdash; please advise</option>
+              <option value="No, or it needs discussing">No, or it's complicated</option>
+            </select>
           </div>
         </div>
         <div class="frow">
           <div class="field">
             <label class="check">
               <input type="checkbox" name="consent" value="yes" required>
-              <span>I'm happy for these details to be stored so Ash can contact me about this enquiry. I can withdraw consent at any time. <span class="req">*</span></span>
+              <span>I'm happy for these details to be stored so Ash can contact me about this enquiry. I can withdraw consent at any time &mdash; see the <a href="/privacy/">privacy policy</a>. <span class="req">*</span></span>
             </label>
           </div>
         </div>
@@ -757,7 +803,7 @@ def book_page():
         <p>If you're not sure what your car needs, a two-minute call usually sorts it faster than a form.</p>
         <p style="margin-top:1rem">
           <a class="btn btn--primary" href="tel:{PHONE}">Call {PHONE_D}</a>
-          <a class="btn btn--ghost" href="https://wa.me/447907019798" rel="noopener" target="_blank">WhatsApp</a>
+          <a class="btn btn--ghost" href="{WHATSAPP}" rel="noopener" target="_blank">WhatsApp</a>
         </p>
       </div>
 
@@ -965,7 +1011,7 @@ def about_page():
   <div class="wrap">
     <p class="eyebrow">About</p>
     <h1>I'm Ash. I detail one car a day.</h1>
-    <p class="lead">Ash's Vehicle Valet and Detailing Ltd is one person, one van, and a diary that only ever has one vehicle in it per day. That's not a marketing line &mdash; it's the whole business model.</p>
+    <p class="lead">Ash's Vehicle Valet and Detailing Ltd is one person, one diary, and only ever one vehicle in it per day. I load the kit into my own car and drive to you. That's not a marketing line &mdash; it's the whole business model.</p>
   </div>
 </section>
 
@@ -1078,7 +1124,7 @@ def contact_page():
         <p>Quickest way to get an answer. If I'm mid-detail I'll come back to you the same day.</p>
         <p style="margin-top:1.25rem">
           <a class="btn btn--primary" href="tel:{PHONE}">Call {PHONE_D}</a>
-          <a class="btn btn--ghost" href="https://wa.me/447907019798" rel="noopener" target="_blank">WhatsApp</a>
+          <a class="btn btn--ghost" href="{WHATSAPP}" rel="noopener" target="_blank">WhatsApp</a>
         </p>
         <p style="margin-top:1rem"><a href="mailto:{SITE['email']}">{SITE['email']}</a></p>
       </div>
@@ -1112,7 +1158,7 @@ def contact_page():
         "contact",
         title="Contact | Mobile Car Detailing in Kent | Ash's Detailing",
         description=(
-            "Call 07907 019798 or message Ash for mobile car detailing across Canterbury and Kent. Honest advice on what your vehicle needs, no pressure."
+            f"Call {PHONE_D} or message Ash for mobile car detailing across Canterbury and Kent. Honest advice on what your vehicle needs, no pressure."
         ),
         body=body, schemas=[business_schema(), breadcrumbs([("Home", "/"), ("Contact", "/contact/")])],
         nav_key="contact", priority="0.8",
@@ -1136,8 +1182,10 @@ def areas_hub():
   <div class="wrap">
     <p class="eyebrow">Areas covered</p>
     <h1>I come to you, right across Kent.</h1>
-    <p class="lead">I'm based in Hersden, just outside Canterbury, and I travel to your home or workplace. From the
-    coast at Whitstable to Tunbridge Wells in the west, and out to the London outskirts.</p>
+    <p class="lead">I'm based in Hersden, just outside Canterbury, and I travel to your home or workplace.
+    I cover the whole of Kent &mdash; from the coast at Whitstable and Folkestone to Tunbridge Wells in the
+    west, and out to the London outskirts. The towns below are simply where I am most often, not the limit
+    of where I'll go.</p>
     <div class="hero__actions" style="margin-top:1.75rem">
       <a class="btn btn--primary btn--lg" href="/book/">Book your detail</a>
       <a class="btn btn--ghost btn--lg" href="tel:{PHONE}">Call {PHONE_D}</a>
@@ -1149,7 +1197,8 @@ def areas_hub():
   <div class="wrap">
     <div class="head head--center">
       <h2>Where I work</h2>
-      <p class="lead">No travel surcharge anywhere on this list.</p>
+      <p class="lead">The areas I'm in most weeks. No travel surcharge anywhere on this list &mdash; and if
+      your town isn't on it, I almost certainly still come to you.</p>
     </div>
     <div class="areas">{cards}</div>
   </div>
@@ -1177,10 +1226,16 @@ def areas_hub():
   <div class="wrap" style="max-width:760px">
     <div class="head head--center">
       <h2>Not on the list?</h2>
-      <p class="lead">Send me your postcode. For a full day's work I'll usually travel further than the list
-      suggests &mdash; and I'd rather give you a straight yes or no than have you guess.</p>
+      <p class="lead">Anywhere in Kent, just ask &mdash; the list above is where I am most weeks, not a
+      boundary. Send me your postcode and I'd rather give you a straight yes or no than have you guess.</p>
     </div>
-    <p class="center"><a class="btn btn--primary btn--lg" href="/contact/">Ask about your area</a></p>
+    <div class="measure" style="margin:0 auto">
+      <p>I'll look at work outside Kent too. It tends to make sense on the bigger jobs &mdash; a full paint
+      correction, a ceramic coating, or the Ultimate Experience &mdash; where I'm with the car all day anyway
+      and the drive is worth making. For those I'd usually add somewhere between &pound;50 and &pound;100 for
+      the travel depending on how far it is, and you'll know that number before you commit to anything.</p>
+    </div>
+    <p class="center" style="margin-top:2rem"><a class="btn btn--primary btn--lg" href="/contact/">Ask about your area</a></p>
   </div>
 </section>
 
@@ -1190,7 +1245,7 @@ def areas_hub():
         "areas",
         title="Areas Covered Across Kent | Ash's Detailing",
         description=(
-            "Mobile car detailing in Canterbury, Whitstable, Sittingbourne, Ashford, Medway, Maidstone, Tonbridge and Tunbridge Wells. I travel to you."
+            "Mobile car detailing across the whole of Kent — Canterbury, Whitstable, Ashford, Folkestone, Medway, Maidstone and beyond. I travel to you."
         ),
         body=body, schemas=[breadcrumbs([("Home", "/"), ("Areas", "/areas/")])],
         nav_key="areas", priority="0.8",
@@ -1198,16 +1253,105 @@ def areas_hub():
 
 
 
+def thanks_page():
+    """Where Netlify sends people after a successful booking enquiry.
+
+    noindex + out of the sitemap: it's only reachable after a POST, and a
+    thank-you page in the search results is a dead end for anyone who lands
+    on it cold.
+    """
+    body = f"""
+<section class="phead phead--img">
+  {phead_bg("ba/after-1-4.jpg", 0.55)}
+  <div class="wrap">
+    <p class="eyebrow">Enquiry sent</p>
+    <h1>Thanks &mdash; that's with me.</h1>
+    <p class="lead">I've got your details and I'll come back to you with a date I can actually commit to,
+    usually the same day. Nothing is booked and no payment is due until we've agreed that date.</p>
+    <div class="hero__actions" style="margin-top:1.75rem">
+      <a class="btn btn--primary btn--lg" href="tel:{PHONE}">Call {PHONE_D}</a>
+      <a class="btn btn--ghost btn--lg" href="/">Back to the site</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap" style="max-width:760px">
+    <div class="callout">
+      <h2>What happens next</h2>
+      <ol class="steps" style="margin-top:1.25rem">
+        <li><div><b>I reply, usually same day</b><p>With a date I can actually commit to.</p></div></li>
+        <li><div><b>You confirm</b><p>A {SITE['deposit']} deposit secures the slot and the products.</p></div></li>
+        <li><div><b>I arrive and get to work</b><p>Yours is the only car I touch that day.</p></div></li>
+        <li><div><b>Balance on completion</b><p>Cash or bank transfer.</p></div></li>
+      </ol>
+      <p style="margin-top:1.5rem">If it's urgent, or you'd rather talk it through, ring or text me on
+      <a href="tel:{PHONE}">{PHONE_D}</a> &mdash; that's usually faster than waiting on email.</p>
+    </div>
+  </div>
+</section>
+"""
+    write_page(
+        "thanks",
+        title="Enquiry Sent | Ash's Detailing",
+        description="Your booking enquiry has been sent. I'll come back to you with a date, usually the same day.",
+        body=body, nav_key="book", noindex=True, in_sitemap=False,
+    )
+
+
+def privacy_page():
+    """Required because the booking form collects personal data.
+
+    Its consent checkbox already promises the visitor they can withdraw consent;
+    without this page there is nothing explaining how. Content lives in
+    src/data/privacy.json — including a _todo list that must be cleared.
+    """
+    secs = "".join(
+        f"""<div class="stack measure" style="margin-bottom:2.75rem">
+  <h2>{e(s['heading'])}</h2>
+  {markdown_lite(s['body'])}
+</div>"""
+        for s in PRIVACY["sections"]
+    )
+    body = f"""
+{crumbs_html([("Home", "/"), ("Privacy", "/privacy/")])}
+<section class="phead">
+  <div class="wrap">
+    <p class="eyebrow">Privacy</p>
+    <h1>What I do with your details.</h1>
+    <p class="lead">{e(PRIVACY['intro'])}</p>
+    <p class="note">Last updated {e(PRIVACY['updated'])}</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap" style="max-width:760px">{secs}</div>
+</section>
+
+{cta_band("Any questions about your data?", "Ring or email me and I'll answer straight away.")}
+"""
+    write_page(
+        "privacy",
+        title="Privacy Policy | Ash's Detailing",
+        description=(
+            "What Ash's Vehicle Valet and Detailing Ltd does with your details. No cookies, no tracking, no marketing — just enough to quote and book your detail."
+        ),
+        body=body, schemas=[breadcrumbs([("Home", "/"), ("Privacy", "/privacy/")])],
+        nav_key="", priority="0.3",
+    )
+
+
 def build():
     home()
     services_hub()
     for s in SERVICES:
         service_page(s)
-    pricing_page()
     book_page()
+    thanks_page()
     gallery_page()
     reviews_page()
     about_page()
     faq_page()
     contact_page()
+    privacy_page()
     areas_hub()

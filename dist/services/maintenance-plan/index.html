@@ -9,6 +9,7 @@
 <meta name="theme-color" content="#0A0C0F">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ash&#x27;s Vehicle Valet and Detailing Ltd">
 <meta property="og:title" content="Maintenance Plan in Kent from £70/month | Ash&#x27;s Detailing">
@@ -28,7 +29,7 @@
 <link rel="stylesheet" href="/main.css?v=4144b2f2">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Maintenance Plan","serviceType":"Maintenance Plan","description":"The hardest part of owning a clean car is keeping it clean. Once your car has had a full detail, I'll come back and keep it there — safely, with the right products, so it never slides back.","provider":{"@id":"https://www.ashsautodetailingltd.co.uk/#business"},"areaServed":[{"@type":"City","name":"Canterbury"},{"@type":"City","name":"Whitstable"},{"@type":"City","name":"Sittingbourne"},{"@type":"City","name":"Ashford"},{"@type":"City","name":"Medway"},{"@type":"City","name":"Maidstone"},{"@type":"City","name":"Tonbridge"},{"@type":"City","name":"Tunbridge Wells"},{"@type":"City","name":"London Outskirts"}],"offers":{"@type":"Offer","price":70,"priceCurrency":"GBP","url":"https://www.ashsautodetailingltd.co.uk/services/maintenance-plan/","availability":"https://schema.org/InStock"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Maintenance Plan","serviceType":"Maintenance Plan","description":"The hardest part of owning a clean car is keeping it clean. Once your car has had a full detail, I'll come back and keep it there — safely, with the right products, so it never slides back.","provider":{"@id":"https://www.ashsautodetailingltd.co.uk/#business"},"areaServed":[{"@type":"City","name":"Canterbury"},{"@type":"City","name":"Whitstable"},{"@type":"City","name":"Sittingbourne"},{"@type":"City","name":"Ashford"},{"@type":"City","name":"Folkestone"},{"@type":"City","name":"Medway"},{"@type":"City","name":"Maidstone"},{"@type":"City","name":"Tonbridge"},{"@type":"City","name":"Tunbridge Wells"},{"@type":"City","name":"London Outskirts"}],"offers":{"@type":"Offer","price":70,"priceCurrency":"GBP","url":"https://www.ashsautodetailingltd.co.uk/services/maintenance-plan/","availability":"https://schema.org/InStock"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ashsautodetailingltd.co.uk/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.ashsautodetailingltd.co.uk/services/"},{"@type":"ListItem","position":3,"name":"Maintenance Plan","item":"https://www.ashsautodetailingltd.co.uk/services/maintenance-plan/"}]}</script>
 </head>
 <body class="">
@@ -77,8 +78,7 @@
             <svg class="navbtn__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5 10 12.5 15 7.5z"/></svg>
           </button>
         </li>
-        <li><a href="/pricing/">Pricing</a></li>
-<li><a href="/gallery/">Gallery</a></li>
+        <li><a href="/gallery/">Gallery</a></li>
 <li><a href="/reviews/">Reviews</a></li>
 <li><a href="/areas/">Areas</a></li>
 <li><a href="/about/">About</a></li>
@@ -87,7 +87,11 @@
     </nav>
 
     <div class="hdr__actions">
-      <a class="btn btn--call" href="tel:+447907019798">
+      <!-- aria-label is required, not belt-and-braces: main.css hides the span
+           unconditionally (.btn--call span { display:none }), and the svg is
+           aria-hidden, so without it this link has no accessible name at all on
+           any viewport. Flagged by Lighthouse as link-name. -->
+      <a class="btn btn--call" href="tel:+447907019798" aria-label="Call 07907 019798">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.6a1 1 0 0 1-.25 1z"/></svg>
         <span>07907 019798</span>
       </a>
@@ -102,14 +106,14 @@
     <div class="wrap mega__inner">
       <div>
         <p class="eyebrow">All services</p>
-        <div class="mega__grid"><a class="mega__i" href="/services/exterior-detail/"><img class="mega__thumb" src="/img/services__exterior-only-services-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Exterior Detail</b><span>A safe, thorough hand wash that brings the gloss back.</span><em>from £100</em></span></a><a class="mega__i" href="/services/interior-detail/"><img class="mega__thumb" src="/img/services__our-services-interior-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Interior Detail</b><span>Deep-cleaned, sanitised and genuinely fresh again.</span><em>from £130</em></span></a><a class="mega__i" href="/services/interior-exterior-detail/"><img class="mega__thumb" src="/img/services__interior-and-exterior-services-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Interior + Exterior Detail</b><span>The complete job, inside and out. My most booked package.</span><em>from £180</em></span></a><a class="mega__i" href="/services/paint-correction/"><img class="mega__thumb" src="/img/services__premium-exterior-detail-with-2-step-machine-polish-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Machine Polishing &amp; Paint Correction</b><span>Removes 70–80% of the swirls cheap car washes put there.</span><em>from £250</em></span></a><a class="mega__i" href="/services/ceramic-coating/"><img class="mega__thumb" src="/img/services__ceramic-coatings-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Ceramic Coating</b><span>Years of protection, applied over corrected paint.</span><em>from £340</em></span></a><a class="mega__i" href="/services/ultimate-experience/"><img class="mega__thumb" src="/img/services__the-ultimate-experience-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>The Ultimate Experience</b><span>Every surface. Nothing left out.</span><em>from £600</em></span></a><a class="mega__i" href="/services/maintenance-plan/"><img class="mega__thumb" src="/img/services__maintenance-plan-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Maintenance Plan</b><span>Keep it that way, for £70 a month.</span><em>from £70/month</em></span></a><a class="mega__i" href="/services/smart-repair/"><img class="mega__thumb" src="/img/services__smart-alloy-repair-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>SMART Repair &amp; Removals</b><span>Scratches, kerbed alloys, badges and old signage.</span><em>from £100</em></span></a></div>
+        <div class="mega__grid"><a class="mega__i" href="/services/exterior-detail/"><img class="mega__thumb" src="/img/services__exterior-only-services-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Exterior Detail</b><span>A safe, thorough hand wash that brings the gloss back.</span><em>from £100</em></span></a><a class="mega__i" href="/services/interior-detail/"><img class="mega__thumb" src="/img/services__our-services-interior-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Interior Detail</b><span>Deep-cleaned, sanitised and genuinely fresh again.</span><em>from £130</em></span></a><a class="mega__i" href="/services/interior-exterior-detail/"><img class="mega__thumb" src="/img/services__interior-and-exterior-services-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Interior + Exterior Detail</b><span>The complete job, inside and out. My most booked package.</span><em>from £180</em></span></a><a class="mega__i" href="/services/paint-correction/"><img class="mega__thumb" src="/img/services__premium-exterior-detail-with-2-step-machine-polish-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Machine Polishing &amp; Paint Correction</b><span>Removes 70–80% of the swirls cheap car washes put there.</span><em>from £250</em></span></a><a class="mega__i" href="/services/ceramic-coating/"><img class="mega__thumb" src="/img/services__ceramic-coatings-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Ceramic Coating</b><span>Years of protection, applied over corrected paint.</span><em>from £340</em></span></a><a class="mega__i" href="/services/ultimate-experience/"><img class="mega__thumb" src="/img/services__the-ultimate-experience-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>The Ultimate Experience</b><span>Every surface. Nothing left out.</span><em>from £800</em></span></a><a class="mega__i" href="/services/maintenance-plan/"><img class="mega__thumb" src="/img/services__maintenance-plan-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>Maintenance Plan</b><span>Keep it that way, for £70 a month.</span><em>from £70/month</em></span></a><a class="mega__i" href="/services/smart-repair/"><img class="mega__thumb" src="/img/services__smart-alloy-repair-400.webp" alt="" width="58" height="58" loading="lazy" decoding="async"><span class="mega__t"><b>SMART Repair &amp; Removals</b><span>Scratches, kerbed alloys, badges and old signage.</span><em>from £100</em></span></a></div>
       </div>
       <div class="mega__aside">
         <p class="eyebrow">Not sure?</p>
         <h3>Send me a photo.</h3>
         <p>Tell me what&rsquo;s bothering you about the car and I&rsquo;ll tell you which package fits &mdash; including when the cheaper one will do.</p>
         <a class="btn btn--primary" href="/contact/">Ask me</a>
-        <a class="tlink" href="/pricing/">See every price
+        <a class="tlink" href="/services/">See every price
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M11 4l6 6-6 6-1.4-1.4 3.6-3.6H3V9h10.2L9.6 5.4z"/></svg>
         </a>
       </div>
@@ -118,11 +122,10 @@
 </header>
 
 <div class="mnav" id="mnav">
-  <ul class="mnav__list"><li><a href="/services/" aria-current="page">Services<span>8</span></a></li>
-<li><a href="/pricing/">Pricing</a></li>
+  <ul class="mnav__list"><li><a href="/services/" aria-current="page">Services &amp; prices<span>8</span></a></li>
 <li><a href="/gallery/">Gallery</a></li>
 <li><a href="/reviews/">Reviews<span>29</span></a></li>
-<li><a href="/areas/">Areas<span>9</span></a></li>
+<li><a href="/areas/">Areas<span>10</span></a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/contact/">Contact</a></li></ul>
   <div class="mnav__foot">
@@ -227,8 +230,7 @@
     <nav class="ftr__col" aria-label="Footer">
       <h2>Explore</h2>
       <ul>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/services/">Services &amp; prices</a></li>
         <li><a href="/gallery/">Gallery</a></li>
         <li><a href="/reviews/">Reviews</a></li>
         <li><a href="/about/">About</a></li>
@@ -255,7 +257,7 @@
 
   <div class="wrap ftr__base">
     <p>&copy; 2026 Ash&rsquo;s Vehicle Valet and Detailing Ltd &middot; Not VAT registered</p>
-    <p class="ftr__legal"><a href="/faq/">FAQs</a> <a href="/areas/">Areas</a> <a href="/book/">Book</a></p>
+    <p class="ftr__legal"><a href="/faq/">FAQs</a> <a href="/areas/">Areas</a> <a href="/book/">Book</a> <a href="/privacy/">Privacy</a></p>
   </div>
 </footer>
 

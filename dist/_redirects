@@ -1,5 +1,6 @@
 # Netlify / Cloudflare Pages
 /book-now/  /book/  301
+/book-now/*  /book/  301
 /contact-us/  /contact/  301
 /faq-s/  /faq/  301
 /our-services-and-prices/  /services/  301
@@ -8,3 +9,4 @@
 /interior-only-detail/  /services/interior-detail/  301
 /interior-and-exterior-detail/  /services/interior-exterior-detail/  301
 /premium-exterior-detail-with-2-step-machine/  /services/paint-correction/  301
+/pricing/  /services/  301

@@ -12,9 +12,15 @@
     "topic": "booking"
   },
   {
-    "q": "Do you need access to water and electricity?",
-    "a": "Yes. I need a plug point and an outside tap so I can run my extension lead and hose. I carry 30 metres of both, so anywhere within that distance of your house is fine.\n\nIf that's a problem, say so when you enquire — there's usually a way around it and I'd rather sort it out beforehand than turn up and find we're stuck.",
+    "q": "Do you need parking, water and electricity?",
+    "a": "Yes — a parking space next to the vehicle, an outside tap and a plug point.\n\nThe space matters as much as the water. Everything I use travels with me, so it all has to sit within reach of the car while I work, and I need your outside tap to run the wash. I carry 30 metres of hose and extension lead, so anywhere within that distance of the house is fine.\n\nIf any of that is a problem, say so when you enquire — there's usually a way around it and I'd much rather sort it out beforehand than turn up and find we're stuck.",
     "featured": true,
+    "topic": "practical"
+  },
+  {
+    "q": "What happens if it rains?",
+    "a": "A bit of rain usually isn't a problem — most of the work is washing the car anyway.\n\nIf the weather is bad enough that I can't do the job properly, I'll ring you and we'll move it to a day that suits. I'd rather reschedule than hand a car back I'm not happy with, and I'll always try to work around you.",
+    "featured": false,
     "topic": "practical"
   },
   {
@@ -70,7 +76,7 @@
   },
   {
     "q": "Can you come to me?",
-    "a": "Yes — I'm a mobile service and I come to your home or workplace. I cover Canterbury, Whitstable, Sittingbourne, Ashford, Medway, Maidstone, Tonbridge, Tunbridge Wells and out to the London outskirts.\n\nThe Ultimate Experience is the one exception: it's drop-off only, because that level of work needs a controlled space.",
+    "a": "Yes — I'm a mobile service and I come to your home or workplace. I cover the whole of Kent — Canterbury, Whitstable, Sittingbourne, Ashford, Folkestone, Medway, Maidstone, Tonbridge, Tunbridge Wells and out to the London outskirts. If your town isn't on that list, ask anyway.\n\nThe Ultimate Experience is the one exception: it's drop-off only, because that level of work needs a controlled space.",
     "topic": "practical"
   }
 ]

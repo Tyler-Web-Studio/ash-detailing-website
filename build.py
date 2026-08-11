@@ -65,6 +65,8 @@ FAQS = load("faqs")
 REVIEWS = load("reviews")
 GALLERY = load("gallery")
 REDIRECTS = load("redirects")
+HEADERS = load("headers")
+PRIVACY = load("privacy")
 BEFOREAFTER = load("beforeafter")
 REDACTIONS = load("redactions")["images"]
 
@@ -602,6 +604,9 @@ def service_schema(svc) -> dict:
 # --------------------------------------------------------------------------
 
 PAGES: list[dict] = []
+# Every index.html written this run. Anything else in dist/ is a page that used
+# to exist and no longer does — see prune_stale_pages().
+WRITTEN_PAGES: set[Path] = set()
 
 
 def phead_bg(rel: str, focus: float = 0.5) -> str:
@@ -618,8 +623,14 @@ def phead_bg(rel: str, focus: float = 0.5) -> str:
 def write_page(path: str, *, title: str, description: str, body: str,
                schemas: list | None = None, og_image: str = "og.jpg",
                nav_key: str = "", priority: str = "0.6",
-               body_class: str = "") -> None:
-    """path: '' for home, 'services/exterior-detail' otherwise."""
+               body_class: str = "", noindex: bool = False,
+               in_sitemap: bool = True) -> None:
+    """path: '' for home, 'services/exterior-detail' otherwise.
+
+    noindex/in_sitemap exist for pages that must not rank — the post-enquiry
+    thank-you page is only reachable after a form POST, so indexing it would
+    put a dead-end page in search results.
+    """
     url = f"{SITE['url']}/{path + '/' if path else ''}"
     blocks = "\n".join(
         f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False, separators=(",", ":"))}</script>'
@@ -635,6 +646,17 @@ def write_page(path: str, *, title: str, description: str, body: str,
             "body": body,
             "schema": blocks,
             "site_name": SITE["name"],
+            # Renders nothing unless a verification code is set in site.json.
+            "google_verification": (
+                f'<meta name="google-site-verification" content="{e(SITE["googleSiteVerification"])}">'
+                if SITE.get("googleSiteVerification") else ""),
+            # Phone comes from site.json so there is one source of truth. The
+            # partials (_header, _footer, _mobilebar) are inlined by render()
+            # before substitution, so they read these too. wa.me is derived
+            # rather than stored — a second copy of the number would drift.
+            "phone": SITE["phone"],
+            "phone_display": SITE["phoneDisplay"],
+            "whatsapp": f"https://wa.me/{SITE['phone'].lstrip('+')}",
             "body_class": body_class,
             "nav": nav_html(nav_key),
             "mnav": mobile_nav_html(nav_key),
@@ -643,7 +665,7 @@ def write_page(path: str, *, title: str, description: str, body: str,
                             cls="brand__mark", priority=True),
             # header mark is 50px; the hero mark is up to 236px on phones
             "year": "2026",
-            "robots": ("noindex, nofollow" if PREVIEW
+            "robots": ("noindex, nofollow" if (PREVIEW or noindex)
                        else "index, follow, max-image-preview:large"),
             "preview_banner": (
                 '<div class="pvw">Preview for review &mdash; not the live site. '
@@ -655,7 +677,9 @@ def write_page(path: str, *, title: str, description: str, body: str,
     target = DIST / path / "index.html" if path else DIST / "index.html"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(out, encoding="utf-8")
-    PAGES.append({"loc": url, "priority": priority})
+    WRITTEN_PAGES.add(target.resolve())
+    if in_sitemap:
+        PAGES.append({"loc": url, "priority": priority})
 
 
 def nav_html(active: str) -> str:
@@ -826,6 +850,7 @@ def copy_static():
             f"User-agent: *\nAllow: /\n\nSitemap: {SITE['url']}/sitemap.xml\n", encoding="utf-8"
         )
     write_redirects()
+    write_headers()
 
 
 def write_icons():
@@ -852,6 +877,45 @@ def write_icons():
                 pad.resize((size, size), Image.LANCZOS).save(path, "PNG", optimize=True)
 
 
+def prune_stale_pages():
+    """Delete pages that no longer exist in pages.py.
+
+    dist/ is committed and served directly, and builds are incremental — so a
+    deleted page used to linger for ever. That is worse than untidy: Netlify
+    serves an existing file in preference to a redirect, so a retired URL would
+    keep serving its old content and its 301 would never fire. Caught when
+    /pricing/ was merged into /services/.
+
+    Only ever touches index.html files that this build did not write. Assets
+    under img/ and fonts/ contain no index.html and are never considered.
+    """
+    for existing in sorted(DIST.rglob("index.html")):
+        if existing.resolve() in WRITTEN_PAGES:
+            continue
+        existing.unlink()
+        print(f"  - removed stale page: /{existing.parent.relative_to(DIST).as_posix()}/")
+        parent = existing.parent
+        if parent != DIST and not any(parent.iterdir()):
+            parent.rmdir()
+
+
+def write_headers():
+    """Security and cache headers as dist/_headers.
+
+    Netlify reads this file automatically, exactly as it does _redirects.
+    They are NOT in netlify.toml: its header parser silently dropped
+    Content-Security-Policy and Permissions-Policy while still reporting
+    "header rules processed without errors". Verified on deploy preview #2.
+    """
+    lines = ["# Generated by build.py from src/data/headers.json — do not edit."]
+    for rule in HEADERS["rules"]:
+        lines.append("")
+        lines.append(rule["for"])
+        for key, value in rule["values"].items():
+            lines.append(f"  {key}: {value}")
+    (DIST / "_headers").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def write_redirects():
     """301s from the old IONOS URLs, in both common hosting formats."""
     rules = REDIRECTS["map"]
@@ -873,7 +937,11 @@ def write_redirects():
         "# old page URLs",
     ]
     for old, new in rules.items():
-        lines.append(f"RedirectMatch 301 ^{old}?$ {new}")
+        # A trailing '*' is Netlify splat syntax; Apache needs a real regex.
+        if old.endswith("*"):
+            lines.append(f"RedirectMatch 301 ^{old[:-1]}.*$ {new}")
+        else:
+            lines.append(f"RedirectMatch 301 ^{old}?$ {new}")
     (DIST / ".htaccess").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -901,6 +969,10 @@ def main():
     sys.modules.setdefault("build", sys.modules[__name__])
     import pages  # noqa: E402
     pages.build()
+
+    # Must run AFTER pages.build(), once WRITTEN_PAGES is populated — otherwise
+    # it would consider every page stale and delete the lot.
+    prune_stale_pages()
 
     write_sitemap()
 
