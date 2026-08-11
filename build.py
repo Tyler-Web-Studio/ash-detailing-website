@@ -646,6 +646,10 @@ def write_page(path: str, *, title: str, description: str, body: str,
             "body": body,
             "schema": blocks,
             "site_name": SITE["name"],
+            # Renders nothing unless a verification code is set in site.json.
+            "google_verification": (
+                f'<meta name="google-site-verification" content="{e(SITE["googleSiteVerification"])}">'
+                if SITE.get("googleSiteVerification") else ""),
             # Phone comes from site.json so there is one source of truth. The
             # partials (_header, _footer, _mobilebar) are inlined by render()
             # before substitution, so they read these too. wa.me is derived

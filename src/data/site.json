@@ -111,11 +111,13 @@
   "hoursNote": "Ash answers the phone and email any time, day or night — detailing itself runs 8am to 8pm.",
   "_notes": {
     "form": "Booking enquiries use NETLIFY FORMS (migrated from FormSubmit 6 Aug 2026). No endpoint, no third party, no activation step. 'name' must match both the form's name attribute and its hidden form-name field, or Netlify rejects the POST. Submissions are stored in the Netlify dashboard AND emailed. THE DESTINATION EMAIL IS NOT IN THIS FILE — it is set in the Netlify UI under Project configuration > Notifications > Form submission notifications, so it can be changed without a redeploy. It should be the 'email' value above. Netlify's free tier covers 100 submissions/month.",
-    "hours": "Confirmed with Ash 31 July 2026: work hours 08:00-20:00 daily; phone and email answered 24/7."
+    "hours": "Confirmed with Ash 31 July 2026: work hours 08:00-20:00 daily; phone and email answered 24/7.",
+    "googleSiteVerification": "Google Search Console ownership check. Paste ONLY the content value from Google's 'HTML tag' method (the long string, not the whole <meta> tag) and rebuild — the tag then renders on every page. Leave empty and nothing is output at all. Verify AFTER the real domain is pointing at Netlify, or Google checks the old IONOS site and fails. Once verified it must stay in place; removing it un-verifies the property."
   },
   "heroAlt": "Black Range Rover covered in snow foam on a wet driveway during the pre-wash stage of an exterior detail",
   "heroImageAlt2": "home/top-background-image.jpg",
   "googleProfile": "https://www.google.com/maps?cid=5785657429822778322",
   "googleReviews": "https://www.google.com/maps?cid=5785657429822778322",
-  "_heroNote": "This hero is a generated atmosphere shot, not one of Ash's jobs. Every image in the gallery and the before/after sliders is her real work — keep it that way, and swap this for a photograph of her own as soon as there is a good landscape one."
+  "_heroNote": "This hero is a generated atmosphere shot, not one of Ash's jobs. Every image in the gallery and the before/after sliders is her real work — keep it that way, and swap this for a photograph of her own as soon as there is a good landscape one.",
+  "googleSiteVerification": ""
 }
