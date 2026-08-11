@@ -54,12 +54,8 @@
   },
   "nav": [
     {
-      "label": "Services",
+      "label": "Services & prices",
       "href": "/services/"
-    },
-    {
-      "label": "Pricing",
-      "href": "/pricing/"
     },
     {
       "label": "Gallery",

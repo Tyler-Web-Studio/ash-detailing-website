@@ -1,5 +1,5 @@
 {
-  "_note": "301 map from the old IONOS site's URLs (taken from its live wp-sitemap) to the new structure. Without these, every existing search ranking and inbound link lands on a 404 and the equity is lost. Emitted by build.py as both dist/_redirects (Netlify / Cloudflare Pages) and dist/.htaccess (Apache / IONOS).",
+  "_note": "301 map from the old IONOS site's URLs (taken from its live wp-sitemap) to the new structure. Without these, every existing search ranking and inbound link lands on a 404 and the equity is lost. Emitted by build.py as both dist/_redirects (Netlify / Cloudflare Pages) and dist/.htaccess (Apache / IONOS). Also carries /pricing/ -> /services/: pricing was merged into the services page on 6 Aug 2026, and the old URL had already been shared.",
   "map": {
     "/book-now/": "/book/",
     "/book-now/*": "/book/",
@@ -10,6 +10,7 @@
     "/exterior-only-detail/": "/services/exterior-detail/",
     "/interior-only-detail/": "/services/interior-detail/",
     "/interior-and-exterior-detail/": "/services/interior-exterior-detail/",
-    "/premium-exterior-detail-with-2-step-machine/": "/services/paint-correction/"
+    "/premium-exterior-detail-with-2-step-machine/": "/services/paint-correction/",
+    "/pricing/": "/services/"
   }
 }

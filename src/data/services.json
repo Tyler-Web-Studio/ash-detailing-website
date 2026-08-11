@@ -28,13 +28,13 @@
     ],
     "premiumTitle": "What Premium adds",
     "premium": [
-      "Full multi-stage chemical decontamination to dissolve iron fallout, tar and bonded contaminants a wash can't reach",
-      "One-stage machine polishing to reduce light scratches, swirl marks and oxidation",
+      "Optional extra — full multi-stage chemical decontamination, to dissolve iron fallout, tar and bonded contaminants a standard wash can't reach",
+      "Optional extra — one-stage machine polishing, to reduce light scratches, swirl marks and oxidation",
       "Deep cleaning of badges, trims, grilles and intricate crevices",
       "Enhanced wheel and brake-dust removal, including behind the spokes",
       "Upgraded ceramic sealant or wax for longer-lasting protection",
       "Exhaust tips polished",
-      "Rubber trims conditioned",
+      "Rubber trims conditioned for restored colour and protection",
       "Glass deep-cleaned and treated for better clarity and water beading"
     ],
     "premiumFor": "Neglected paintwork, cars going up for sale, or anyone who wants a noticeably deeper gloss and protection that lasts.",
@@ -85,19 +85,51 @@
     "tagline": "The complete job, inside and out. My most booked package.",
     "intro": "Everything from both details in a single visit. The car goes back to you clean, protected and presentable from every angle — which is why most people choose this one.",
     "forWho": "Anyone who wants the whole car done properly in one go, and the obvious choice before selling.",
-    "popular": true,
-    "includes": [
-      "The full Interior Detail — extraction, steam, sanitisation and fragrance",
-      "The full Exterior Detail — decontamination wash, polish and protection",
-      "Door and boot shuts cleaned inside and out",
-      "Interior and exterior glass cleaned to a non-smear finish",
-      "Wheels, arches and tyres detailed and dressed"
+    "includeGroups": [
+      {
+        "title": "Interior treatment",
+        "items": [
+          "Rubbish removed",
+          "Mats removed, vacuumed, cleaned, dried and brushed",
+          "Dashboard and compartments dust-vacuumed",
+          "Vents cleaned and steamed",
+          "Seats, carpets and boot vacuumed, wet-cleaned, steamed, dried and brushed",
+          "Dashboard, compartments and controls lightly cleaned, towel wiped and intricately detailed",
+          "Interior glass cleaned with non-smear glass cleaner",
+          "Leather care balm applied (if required)",
+          "Scented fragrance applied",
+          "Pet hair removal (excess will incur an additional fee)"
+        ]
+      },
+      {
+        "title": "Exterior treatment",
+        "items": [
+          "Bodywork and tyres soaked in citrus pre-wash and snow foam",
+          "Wheel arches cleaned",
+          "Wheels soaked in non-acidic wheel cleaner",
+          "Exterior pressure rinse",
+          "Wheels treated with fallout remover",
+          "Road tar removed from bodywork and wheels",
+          "Wheel barrels, faces and lug nuts hand-cleaned with soft brushes and wheel woolies",
+          "Bodywork washed using premium shampoo and a plush wash mitt",
+          "Door and boot shuts cleaned",
+          "Bodywork dried with luxury microfibre towels",
+          "Wheels dried",
+          "Tyres dressed (if requested)",
+          "Hand polish applied",
+          "Ceramic spray wax applied — three months of protection",
+          "Exterior glass cleaned with non-smear cleaner",
+          "Colour restoration of exterior plastics"
+        ]
+      }
     ],
+    "popular": true,
     "premiumTitle": "What Premium adds",
     "premium": [
       "Everything in the Premium Interior — leather perforations, vents, seat creases, fine-pick detailing",
-      "Everything in the Premium Exterior — chemical decontamination, machine polish, upgraded protection",
-      "Exterior metal polishing to lift dullness and light defects"
+      "Everything in the Premium Exterior — deep-cleaned badges and trims, enhanced brake-dust removal, upgraded protection, polished exhaust tips",
+      "Exterior metal polishing to lift dullness and light defects",
+      "Full chemical decontamination and machine polishing are available as optional extras"
     ],
     "premiumFor": "People who want a genuinely premium result rather than a very good clean.",
     "upsell": "Add a two-step machine polish for £350 total and the paintwork gets corrected as well as cleaned.",
@@ -114,11 +146,13 @@
     "intro": "Swirl marks and light scratches are what make dark paint look dull and grey in daylight. A two-step machine polish cuts them out and refines the finish back to a sharp, deep gloss.",
     "forWho": "Dull, scratched or weathered paintwork — especially black, grey and dark blue cars that have been through automated washes.",
     "includes": [
-      "Full exterior detail and multi-stage decontamination first",
+      "Everything in the Premium Exterior Detail first",
       "Paint depth assessed before any correction begins",
-      "Cutting stage to remove swirl marks, light scratches and oxidation",
-      "Refining stage to restore clarity and depth",
+      "Cutting stage — heavy, medium or light compound depending on clear-coat damage",
+      "Removes light scratches, oxidation, swirl marks and general dullness",
+      "Refining micro-cut polish to restore depth, clarity and high gloss",
       "70–80% of swirl marks and light scratches removed",
+      "Only microns of clear coat removed, never millimetres — the paint stays healthy",
       "Protection applied to lock the finish in"
     ],
     "priceNotes": [
@@ -139,7 +173,7 @@
         "price": "+£20"
       }
     ],
-    "note": "Full correction beyond 80% isn't always safe or sensible — it depends on how much clear coat the car has left. I'll tell you honestly what's achievable before starting.",
+    "note": "Recommended about once a year to maintain paint integrity, and normally carried out before a ceramic coating goes on.",
     "titleName": "Paint Correction",
     "metaDescription": "Two-step machine polishing removes 70-80% of swirl marks and light scratches. Mobile paint correction across Kent, from £250."
   },

@@ -16,3 +16,4 @@ RedirectMatch 301 ^/exterior-only-detail/?$ /services/exterior-detail/
 RedirectMatch 301 ^/interior-only-detail/?$ /services/interior-detail/
 RedirectMatch 301 ^/interior-and-exterior-detail/?$ /services/interior-exterior-detail/
 RedirectMatch 301 ^/premium-exterior-detail-with-2-step-machine/?$ /services/paint-correction/
+RedirectMatch 301 ^/pricing/?$ /services/

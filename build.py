@@ -66,6 +66,7 @@ REVIEWS = load("reviews")
 GALLERY = load("gallery")
 REDIRECTS = load("redirects")
 HEADERS = load("headers")
+PRIVACY = load("privacy")
 BEFOREAFTER = load("beforeafter")
 REDACTIONS = load("redactions")["images"]
 
@@ -603,6 +604,9 @@ def service_schema(svc) -> dict:
 # --------------------------------------------------------------------------
 
 PAGES: list[dict] = []
+# Every index.html written this run. Anything else in dist/ is a page that used
+# to exist and no longer does — see prune_stale_pages().
+WRITTEN_PAGES: set[Path] = set()
 
 
 def phead_bg(rel: str, focus: float = 0.5) -> str:
@@ -669,6 +673,7 @@ def write_page(path: str, *, title: str, description: str, body: str,
     target = DIST / path / "index.html" if path else DIST / "index.html"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(out, encoding="utf-8")
+    WRITTEN_PAGES.add(target.resolve())
     if in_sitemap:
         PAGES.append({"loc": url, "priority": priority})
 
@@ -868,6 +873,28 @@ def write_icons():
                 pad.resize((size, size), Image.LANCZOS).save(path, "PNG", optimize=True)
 
 
+def prune_stale_pages():
+    """Delete pages that no longer exist in pages.py.
+
+    dist/ is committed and served directly, and builds are incremental — so a
+    deleted page used to linger for ever. That is worse than untidy: Netlify
+    serves an existing file in preference to a redirect, so a retired URL would
+    keep serving its old content and its 301 would never fire. Caught when
+    /pricing/ was merged into /services/.
+
+    Only ever touches index.html files that this build did not write. Assets
+    under img/ and fonts/ contain no index.html and are never considered.
+    """
+    for existing in sorted(DIST.rglob("index.html")):
+        if existing.resolve() in WRITTEN_PAGES:
+            continue
+        existing.unlink()
+        print(f"  - removed stale page: /{existing.parent.relative_to(DIST).as_posix()}/")
+        parent = existing.parent
+        if parent != DIST and not any(parent.iterdir()):
+            parent.rmdir()
+
+
 def write_headers():
     """Security and cache headers as dist/_headers.
 
@@ -938,6 +965,10 @@ def main():
     sys.modules.setdefault("build", sys.modules[__name__])
     import pages  # noqa: E402
     pages.build()
+
+    # Must run AFTER pages.build(), once WRITTEN_PAGES is populated — otherwise
+    # it would consider every page stale and delete the lot.
+    prune_stale_pages()
 
     write_sitemap()
 

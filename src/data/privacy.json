@@ -1,0 +1,44 @@
+{
+  "_note": "Privacy policy content. Rendered by pages.py -> /privacy/. Written from what the site VERIFIABLY does — the booking form fields, Netlify Forms storage, and the fact that the site sets no cookies and runs no analytics. Anything that could not be sourced is marked [ASH TO CONFIRM] and MUST be resolved before launch. This is not legal advice and has not been reviewed by a solicitor.",
+  "_todo": [
+    "Retention period — how long Ash keeps enquiry and customer records. Suggested 24 months for enquiries, 6 years for completed jobs (UK company record-keeping), but Ash decides.",
+    "ICO registration — most UK businesses processing personal data must register with the Information Commissioner's Office and pay the annual data protection fee (currently tiered, smallest tier £52/yr). Ash should check her position at ico.org.uk/registration and add the number here if she registers.",
+    "Confirm whether Ash keeps customer photos of vehicles and whether they may be used on social media — if so that needs its own paragraph and a consent route."
+  ],
+  "updated": "6 August 2026",
+  "intro": "This policy explains what I do with your information when you enquire about or book a detail. I'm a one-person business and I collect as little as I can get away with — just enough to give you a price and turn up at the right place on the right day.",
+  "sections": [
+    {
+      "heading": "Who I am",
+      "body": "Ash's Vehicle Valet and Detailing Ltd is the data controller for the information described here.\n\n**Address:** Pitman Road, Canterbury, Kent CT3 4FF\n**Email:** [ashs_vvad_ltd@icloud.com](mailto:ashs_vvad_ltd@icloud.com)\n**Phone:** [07907 019798](tel:+447907019798)\n\nIf you have any question about your information, contact me directly using the details above."
+    },
+    {
+      "heading": "What I collect, and when",
+      "body": "**When you use the booking form**, I collect your name, phone number, email address, postcode, nearest town, the make and model of your vehicle, its size, the service and option you're interested in, anything you tell me about the vehicle's condition, and your preferred and alternative dates.\n\n**When you call, text, WhatsApp or email me**, I have whatever you choose to tell me, plus your phone number or email address.\n\nI don't collect anything else. There is no account to create, no newsletter, and no profiling."
+    },
+    {
+      "heading": "Why I need it, and my lawful basis",
+      "body": "I use your details for one purpose: to reply to your enquiry, give you an accurate price, agree a date, and carry out the work.\n\nThe lawful basis is **your consent** when you tick the box on the booking form, and **performance of a contract** once you've booked. Where I keep records of completed jobs, that's a **legal obligation** — a limited company has to keep business records.\n\nI will never sell your information, share it for marketing, or send you anything you didn't ask for."
+    },
+    {
+      "heading": "Cookies and tracking",
+      "body": "**This website sets no cookies and runs no analytics or advertising trackers.** There is no Google Analytics, no advertising pixel, and nothing that follows you between sites. That's why you won't see a cookie banner here — there's nothing to consent to.\n\nTwo parts of the site load content from elsewhere, and it's fair that you know:\n\nThe **videos on the gallery page** don't load anything from YouTube until you press play. Once you do, YouTube receives your IP address and may set its own cookies, under [Google's privacy policy](https://policies.google.com/privacy). The still preview images are served by Google before you click.\n\nThe **map on the contact page** is embedded from OpenStreetMap, which receives your IP address when the page loads."
+    },
+    {
+      "heading": "Where your information is kept",
+      "body": "The website is hosted by **Netlify**, and booking enquiries are received through Netlify Forms. Your submission is stored securely in my Netlify account and emailed to me. Netlify acts as a data processor on my behalf — see the [Netlify privacy policy](https://www.netlify.com/privacy/).\n\nEmail is handled through **Apple iCloud Mail**. Netlify's servers may be located outside the UK; where that happens, transfers are covered by the safeguards in Netlify's own data processing terms.\n\nThe site is served over HTTPS, so anything you send through the booking form is encrypted in transit."
+    },
+    {
+      "heading": "How long I keep it",
+      "body": "[ASH TO CONFIRM] — enquiries that don't turn into a booking are kept for a limited period and then deleted. Records of completed work are kept for as long as company record-keeping requires.\n\nIf you'd like your details removed sooner, just ask and I'll do it."
+    },
+    {
+      "heading": "Your rights",
+      "body": "Under UK data protection law you can ask me to:\n\n**See** a copy of the information I hold about you\n**Correct** anything that's wrong\n**Delete** your information\n**Restrict** or **object to** how I use it\n**Withdraw your consent** at any time, which won't affect anything done before you withdrew it\n\nAsk me by email or phone and I'll deal with it within one month, free of charge.\n\nIf you're unhappy with how I've handled your information, you can complain to the Information Commissioner's Office at [ico.org.uk](https://ico.org.uk/make-a-complaint/) or on 0303 123 1113. I'd rather you told me first so I can put it right."
+    },
+    {
+      "heading": "Changes to this policy",
+      "body": "If this policy changes, the date at the top of the page changes with it. This is the only version — there's no archive, because the site is new."
+    }
+  ]
+}
