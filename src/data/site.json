@@ -17,7 +17,7 @@
   "lng": 1.1550329,
   "priceRange": "££",
   "foundingDate": "2025-12",
-  "reviewCount": 29,
+  "reviewCount": 30,
   "ratingValue": "5.0",
   "award": "Best Detailing Service in South England",
   "hours": [
@@ -81,7 +81,7 @@
   "trustPoints": [
     {
       "value": "5.0",
-      "label": "from 29 reviews",
+      "label": "from 30 reviews",
       "icon": "star"
     },
     {

@@ -1,7 +1,136 @@
 {
   "_note": "Captions are deliberately conservative — where the vehicle could not be identified with certainty from the source photo, a neutral description is used rather than a guess. Ash should replace these with the real vehicle and package for each job; that is also what makes the alt text worth something for SEO.",
-  "_imageNote": "The ba/* files are 1536x2048 originals — roughly four times the resolution of the older gallery/* files, which are low-resolution web copies. The build never upscales, so older shots are capped at their source size.",
+  "_imageNote": "The ba/* files are 1536x2048 originals — roughly four times the resolution of the older gallery/* files, which are low-resolution web copies. The build never upscales, so older shots are capped at their source size. The gallery/w*.jpg files added September 2026 are 1066x1600 — number plates were blurred before import, so they need no entry in redactions.json.",
   "items": [
+    {
+      "src": "gallery/w01-evoque-finished.jpg",
+      "caption": "Range Rover Evoque — finished exterior",
+      "alt": "Black Overfinch Range Rover Evoque on a gravel driveway after a full exterior detail, water still beading on the paint",
+      "tags": [
+        "exterior"
+      ]
+    },
+    {
+      "src": "gallery/w02-evoque-rinse.jpg",
+      "caption": "Evoque — rinsing the front end",
+      "alt": "Rinsing the grille and front bumper of a black Range Rover Evoque during an exterior detail",
+      "tags": [
+        "exterior",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w03-wheel-snowfoam.jpg",
+      "caption": "Wheels and arches under snow foam",
+      "alt": "Snow foam covering the front wheel, arch and tyre of a black Range Rover Evoque",
+      "tags": [
+        "exterior",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w04-machine-polish.jpg",
+      "caption": "Machine polishing the bonnet",
+      "alt": "Dual action machine polisher with a blue pad working across the bonnet of a black car",
+      "tags": [
+        "polish",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w05-boot-interior.jpg",
+      "caption": "Estate boot — interior deep clean",
+      "alt": "Cleaned boot carpet and folded rear seats of an estate car after an interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/w06-dashboard.jpg",
+      "caption": "Evoque — dashboard and cabin",
+      "alt": "Steering wheel, dashboard and centre console of a Range Rover Evoque after an interior detail",
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "src": "gallery/w07-badge-removal.jpg",
+      "caption": "Badge removal, masked and lifted",
+      "alt": "Lettering being lifted from a car bonnet with the surrounding paint masked off in green tape",
+      "tags": [
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w08-on-the-driveway.jpg",
+      "caption": "A driveway in Kent, mid-detail",
+      "alt": "Ash detailing a black Range Rover Evoque on a customer's driveway with her equipment laid out beside the car",
+      "tags": [
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w09-drying-glass.jpg",
+      "caption": "Drying the glass and bonnet",
+      "alt": "Drying the windscreen and bonnet of a black car with a microfibre towel",
+      "tags": [
+        "exterior",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w10-polish-door.jpg",
+      "caption": "Polishing around the door handle",
+      "alt": "Machine polisher working the paint beside the door handle of a black car",
+      "tags": [
+        "polish",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w11-protection-on.jpg",
+      "caption": "Protection going on",
+      "alt": "Spraying sealant onto the bonnet of a black Range Rover Evoque and buffing it off with a microfibre cloth",
+      "tags": [
+        "exterior",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w12-polish-wing.jpg",
+      "caption": "Correcting the front wing",
+      "alt": "Machine polishing the front wing of a black car beside the headlight",
+      "tags": [
+        "polish",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w13-chrome-letters.jpg",
+      "caption": "Chrome lettering, removed by hand",
+      "alt": "Chrome badge letters being lifted from a black bonnet, their position marked out in green tape",
+      "tags": [
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w14-rear-drying.jpg",
+      "caption": "Drying the rear end",
+      "alt": "Drying the rear of a black Range Rover Evoque with a microfibre towel after rinsing",
+      "tags": [
+        "exterior",
+        "process"
+      ]
+    },
+    {
+      "src": "gallery/w15-final-wipe.jpg",
+      "caption": "Final wipe-down",
+      "alt": "Final wipe down of the rear door of a black Range Rover Evoque against a brick wall",
+      "tags": [
+        "exterior",
+        "process"
+      ]
+    },
     {
       "src": "ba/after-1-8.jpg",
       "caption": "Ford Focus RS — exterior detail",

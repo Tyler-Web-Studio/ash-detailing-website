@@ -654,6 +654,11 @@ def write_page(path: str, *, title: str, description: str, body: str,
             # partials (_header, _footer, _mobilebar) are inlined by render()
             # before substitution, so they read these too. wa.me is derived
             # rather than stored — a second copy of the number would drift.
+            # Review numbers are template-exposed for the same reason as phone:
+            # the header quoted a hard-coded "29" that went stale the moment
+            # a new review landed. One source, site.json.
+            "review_count": str(SITE["reviewCount"]),
+            "rating_value": str(SITE["ratingValue"]),
             "phone": SITE["phone"],
             "phone_display": SITE["phoneDisplay"],
             "whatsapp": f"https://wa.me/{SITE['phone'].lstrip('+')}",

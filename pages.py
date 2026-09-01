@@ -193,11 +193,42 @@ def home():
   </div>
 </section>
 
+<section class="sec qsec" id="quick">
+  <div class="wrap">
+    <div class="head head--center">
+      <p class="eyebrow">Quick enquiry</p>
+      <h2>Thirty seconds. I&rsquo;ll come back to you.</h2>
+      <p class="lead measure center">Your name and how to reach you &mdash; that&rsquo;s all I need to get started. I&rsquo;ll be in touch to talk through the car and what it actually needs. Nothing to pay, and no obligation.</p>
+    </div>
+    <form class="qform" name="quick-enquiry" method="post" action="{SITE['form']['successPath']}"
+          data-netlify="true" data-netlify-honeypot="_honey">
+      <input type="hidden" name="form-name" value="quick-enquiry">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field">
+        <label for="q-name">Your name <span class="req">*</span></label>
+        <input id="q-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="q-phone">Phone <span class="req">*</span></label>
+        <input id="q-phone" name="phone" type="tel" autocomplete="tel" required>
+      </div>
+      <div class="field">
+        <label for="q-email">Email <span class="req">*</span></label>
+        <input id="q-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="qform__go">
+        <button class="btn btn--primary" type="submit">Send enquiry</button>
+      </div>
+    </form>
+    <p class="qform__alt">Know what you want already? <a href="/book/">Use the full booking form</a> &mdash; or call <a href="tel:{SITE['phone']}">{SITE['phoneDisplay']}</a>.</p>
+  </div>
+</section>
+
 <section class="sec sec--alt">
   <div class="wrap">
     <div class="head head--center">
       <p class="eyebrow">Reviews</p>
-      <h2>29 reviews. Every one five stars.</h2>
+      <h2>{SITE['reviewCount']} reviews. Every one five stars.</h2>
       <p class="lead">Not an average of five &mdash; every single review since the business opened. All public on Google, where they can&rsquo;t be edited.</p>
     </div>
     <div class="revwrap">
@@ -322,7 +353,7 @@ def home():
         title="Mobile Car Detailing Canterbury & Kent | Ash's Detailing",
         description=(
             "Award-winning mobile car detailing in Canterbury and Kent. One car a day, "
-            "29 five-star reviews. Interior, exterior and ceramic coating from £100."
+            f"{SITE['reviewCount']} five-star reviews. Interior, exterior and ceramic coating from £100."
         ),
         body=body,
         schemas=[business_schema(), faq_schema(featured), review_schema(limit=6)],
