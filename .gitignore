@@ -21,3 +21,5 @@ screenshots for claude/
 
 # NOTE: dist/ is intentionally NOT ignored. netlify.toml publishes it directly,
 # so Netlify needs no build step and no Python/Pillow on its build image.
+package.json
+package-lock.json
