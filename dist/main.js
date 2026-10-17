@@ -269,6 +269,16 @@
     try { data = JSON.parse($('#pkgdata').textContent); } catch (e) {}
 
     var pkg = $('#package', form), opt = $('#option', form), est = $('#estimate');
+    var size = $('#size', form);
+
+    // Some services (ceramic coating) are priced by vehicle size. An option with a
+    // `sizes` map uses the price for the chosen size; a size it doesn't list
+    // (caravans) is quoted rather than guessed.
+    var sizedPrice = function (o) {
+      if (!o.sizes) return o.price;
+      var v = size ? size.value : '';
+      return Object.prototype.hasOwnProperty.call(o.sizes, v) ? o.sizes[v] : null;
+    };
 
     var priceOf = function () {
       var o = opt && opt.options[opt.selectedIndex];
@@ -300,9 +310,10 @@
       opt.required = true;
       d.options.forEach(function (o) {
         var el = document.createElement('option');
+        var price = sizedPrice(o);
         el.value = o.label;
-        if (o.price) el.dataset.price = o.price;
-        el.textContent = o.label + (o.price ? ' — £' + o.price.toLocaleString('en-GB') + (o.unit || d.unit || '') : ' — quoted')
+        if (price) el.dataset.price = price;
+        el.textContent = o.label + (price ? ' — £' + price.toLocaleString('en-GB') + (o.unit || d.unit || '') : ' — quoted')
                          + (o.popular ? ' · most booked' : '');
         opt.appendChild(el);
       });
@@ -314,6 +325,12 @@
 
     if (pkg) pkg.addEventListener('change', function () { fillOptions(); });
     if (opt) opt.addEventListener('change', function () { showPrice(); bump(est); });
+    // Re-price the option list when the size changes, keeping the chosen option.
+    if (size) size.addEventListener('change', function () {
+      var before = priceOf();
+      fillOptions(opt ? opt.value : null);
+      if (priceOf() !== before) bump(est);
+    });
 
     // Pre-fill from the service page: /book/?service=slug&option=Label
     var q = new URLSearchParams(location.search);

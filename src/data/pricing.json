@@ -124,35 +124,93 @@
         {
           "label": "1 year",
           "add": 40,
-          "total": 340
+          "total": 340,
+          "sizes": {
+            "Standard car": 340,
+            "Large / 4x4 / estate": 340,
+            "XL (6+ seats)": 370,
+            "Van": 400
+          }
         },
         {
           "label": "2 year",
-          "add": 50,
-          "total": 350
+          "add": 80,
+          "total": 380,
+          "sizes": {
+            "Standard car": 380,
+            "Large / 4x4 / estate": 380,
+            "XL (6+ seats)": 420,
+            "Van": 460
+          }
         },
         {
           "label": "5 year",
-          "add": 150,
-          "total": 450,
-          "popular": true
+          "add": 200,
+          "total": 500,
+          "popular": true,
+          "sizes": {
+            "Standard car": 500,
+            "Large / 4x4 / estate": 500,
+            "XL (6+ seats)": 550,
+            "Van": 600
+          }
         },
         {
           "label": "1 year + Interior Premium",
           "add": 100,
-          "total": 400
+          "total": 400,
+          "sizes": {
+            "Standard car": 400,
+            "Large / 4x4 / estate": 400,
+            "XL (6+ seats)": 460,
+            "Van": 490
+          }
         },
         {
           "label": "2 year + Interior Premium",
-          "add": 120,
-          "total": 420
+          "add": 150,
+          "total": 450,
+          "sizes": {
+            "Standard car": 450,
+            "Large / 4x4 / estate": 450,
+            "XL (6+ seats)": 520,
+            "Van": 560
+          }
         },
         {
           "label": "5 year + Interior Premium",
-          "add": 220,
-          "total": 520
+          "add": 270,
+          "total": 570,
+          "sizes": {
+            "Standard car": 570,
+            "Large / 4x4 / estate": 570,
+            "XL (6+ seats)": 650,
+            "Van": 700
+          }
         }
-      ]
+      ],
+      "sizeColumns": [
+        {
+          "label": "Car / 4x4 / estate",
+          "sizes": [
+            "Standard car",
+            "Large / 4x4 / estate"
+          ]
+        },
+        {
+          "label": "XL (6+ seats)",
+          "sizes": [
+            "XL (6+ seats)"
+          ]
+        },
+        {
+          "label": "Van",
+          "sizes": [
+            "Van"
+          ]
+        }
+      ],
+      "sizeNote": "Priced by vehicle size. Caravans and motorhomes are quoted individually."
     }
   },
   "flagship": [

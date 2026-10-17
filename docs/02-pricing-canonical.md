@@ -60,14 +60,16 @@ Ash's old site carries **two** price lists, and as of 6 August 2026 they disagre
 
 Exterior only. Includes full exterior detail + 2-step polish + coating.
 
-| Option | Surcharge | **Total** |
-|---|---|---|
-| 1 year | +£40 | **£340** |
-| 2 year | +£50 | **£350** |
-| 5 year | +£150 | **£450** |
-| 1 year + Interior Premium | +£100 | **£400** |
-| 2 year + Interior Premium | +£120 | **£420** |
-| 5 year + Interior Premium | +£220 | **£520** |
+**Priced by vehicle size since 17 Oct 2026** (Ash's request: 5 year to £500, 2 year to £380, XL and vans cost more on every option). Caravans/motorhomes are quoted. The booking form re-prices when the size changes.
+
+| Option | Car / Large / 4x4 / estate | XL (6+ seats) | Van |
+|---|---|---|---|
+| 1 year | **£340** | £370 | £400 |
+| 2 year | **£380** | £420 | £460 |
+| 5 year | **£500** | £550 | £600 |
+| 1 year + Interior Premium | **£400** | £460 | £490 |
+| 2 year + Interior Premium | **£450** | £520 | £560 |
+| 5 year + Interior Premium | **£570** | £650 | £700 |
 
 > The live site advertises "£300+". The lowest buyable price is **£340**. Corrected in the rebuild.
 

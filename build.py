@@ -296,10 +296,15 @@ def booking_options(svc: dict) -> list[dict]:
     """
     key = svc.get("priceKey")
     if key:
-        return [
-            {"label": v["label"], "price": v["total"], "popular": bool(v.get("popular"))}
-            for v in PRICING["packages"][key]["variants"]
-        ]
+        out = []
+        for v in PRICING["packages"][key]["variants"]:
+            o = {"label": v["label"], "price": v["total"], "popular": bool(v.get("popular"))}
+            if v.get("sizes"):
+                # Price depends on the vehicle size picked on /book/. Any size not
+                # listed (e.g. caravans) is quoted rather than guessed.
+                o["sizes"] = v["sizes"]
+            out.append(o)
+        return out
     if svc.get("priceNotes"):
         out = []
         for p in svc["priceNotes"]:
@@ -337,6 +342,8 @@ def configurator(svc: dict) -> str:
         rows.append(f'<option value="{e(o["label"])}" data-price="{o["price"] or ""}"{sel}>'
                     f'{e(o["label"])}{price}{flag}</option>')
     dp = f"{money(default['price'])}{default.get('unit','')}" if default["price"] else "Quoted"
+    sized = ("Prices shown are for a car, 4x4 or estate &mdash; XL vehicles and vans are in the table below. "
+             if any(o.get("sizes") for o in opts) else "")
     return f"""<form class="cfg" data-cfg data-slug="{svc['slug']}" action="/book/" method="get">
   <input type="hidden" name="service" value="{svc['slug']}">
   <div class="cfg__row">
@@ -349,7 +356,7 @@ def configurator(svc: dict) -> str:
     <p class="cfg__price"><span>{'Price' if not quoted else ''}</span><b data-cfg-price>{dp}</b></p>
     <button class="btn btn--primary btn--lg" type="submit">Book this &rarr;</button>
   </div>
-  <p class="cfg__note">Your choice carries through to the booking form &mdash; you won&rsquo;t be asked twice.</p>
+  <p class="cfg__note">{sized}Your choice carries through to the booking form &mdash; you won&rsquo;t be asked twice.</p>
 </form>"""
 
 
@@ -744,8 +751,35 @@ def stars(n: int = 5) -> str:
     return f'<span class="stars" role="img" aria-label="{n} out of 5 stars">{star * n}</span>'
 
 
+def size_price_table(pkg: dict) -> str:
+    """Option x vehicle-size grid, for packages priced by size (ceramic coating)."""
+    cols = pkg["sizeColumns"]
+    head = "".join(f'<th scope="col" class="num">{e(c["label"])}</th>' for c in cols)
+    rows = []
+    for v in pkg["variants"]:
+        badge = ' <span class="tag">Most booked</span>' if v.get("popular") else ""
+        cells = "".join(
+            f'<td class="num total" data-label="{e(c["label"])}">{money(v["sizes"][c["sizes"][0]])}</td>'
+            for c in cols
+        )
+        rows.append(
+            f'<tr{" class=is-popular" if v.get("popular") else ""}>'
+            f"<th scope=\"row\">{e(v['label'])}{badge}</th>{cells}</tr>"
+        )
+    notes = " ".join(e(n) for n in (pkg.get("note"), pkg.get("sizeNote")) if n)
+    note = f'<p class="note">{notes}</p>' if notes else ""
+    return f"""<div class="table-wrap">
+<table class="prices">
+<caption class="vh">{e(pkg['name'])} prices by vehicle size</caption>
+<thead><tr><th scope="col">Option</th>{head}</tr></thead>
+<tbody>{''.join(rows)}</tbody>
+</table></div>{note}"""
+
+
 def price_table(key: str) -> str:
     pkg = PRICING["packages"][key]
+    if pkg.get("sizeColumns"):
+        return size_price_table(pkg)
     rows = []
     for v in pkg["variants"]:
         badge = ' <span class="tag">Most booked</span>' if v.get("popular") else ""
